@@ -9,7 +9,7 @@ align-items: center;
 
 /*logo*/
 
-Navbar.Brand img {
+.logo{
    width: 7%;
    height: 10%;
 }
@@ -22,7 +22,9 @@ Navbar.Brand img {
     display: flex;
     justify-content: space-around;
 }
-@media screen (max-width 830px){
+
+/*si la pantalla es mayor a 830*/
+@media screen (min-width 830px){
     .logo{
         width: 20px !important;
         height: 20px !important;
