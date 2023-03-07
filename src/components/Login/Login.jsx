@@ -18,10 +18,12 @@ function Login() {
         <Row className='d-flex justify-content-center align-items-center'>
           <Col>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <input defaultValue="test" {...register("example")} />
-              <input {...register("exampleRequired", { required: true })} />
+              <label htmlFor="name">Nombre de usuario</label>
+              <input name="name" placeholder='example@email.com' {...register("example")} />
+              <label htmlFor="password">Constraseña</label>
+              <input name='password' type={'password'} placeholder={'**********'} {...register("exampleRequired", { required: true })} />
               {errors.exampleRequired && <span>This field is required</span>}
-              <input type="submit" />
+              <input type="submit" id='sendButton' />
             </form>
           </Col>
         </Row>
