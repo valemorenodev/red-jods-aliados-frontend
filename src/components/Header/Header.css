@@ -1,0 +1,29 @@
+*{
+    width: 100%;
+}
+
+.me-auto{
+display: flex; 
+align-items: center;
+}
+
+/*logo*/
+
+Navbar.Brand img {
+   width: 7%;
+   height: 10%;
+}
+
+.imgcerrar{
+    width: 32px !important;
+    height: 32px !important;
+}
+.sesion{
+    display: flex;
+    justify-content: space-around;
+}
+@media screen (max-width 830px){
+    .logo{
+        width: 20px !important;
+        height: 20px !important;
+    }
