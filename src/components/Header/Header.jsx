@@ -12,7 +12,7 @@ function Header() {
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">
-          <img className= 'logo'src="/src/assets/LOGO RED JODS.png" alt="" />
+          <img id= 'logo'src="/src/assets/LOGO RED JODS.png" alt="" />
           <p>Bienvenido Administrador</p>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
