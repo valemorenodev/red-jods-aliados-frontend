@@ -30,8 +30,35 @@ a {
   min-height: 80vh;
   background-color: white;
   border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .logo {
-  width: 30rem;
+  width: 15em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1400px) {
+  .logo {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399) {
+  .logo {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023) {
+  .logo {
+    width: 25rem;
+  }
 }
