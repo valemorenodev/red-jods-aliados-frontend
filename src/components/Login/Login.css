@@ -26,7 +26,7 @@ a {
 }
 
 #container-login {
-  min-width: 80vw;
+  min-width: 60vw;
   min-height: 80vh;
   background-color: white;
   border-radius: 1rem;
@@ -37,7 +37,7 @@ a {
 }
 
 .logo {
-  width: 15em;
+  width: 15rem;
 }
 
 form {
@@ -45,6 +45,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 16pt;
 }
 
 label {
@@ -64,20 +65,32 @@ input {
   border-radius: 5px 5px;
 }
 
-@media (min-width: 1400px) {
-  .logo {
-    width: 40rem;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1399) {
+@media (min-width: 1440px) {
   .logo {
     width: 30rem;
   }
+
+  #container-login {
+    min-width: 60vw;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1023) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .logo {
     width: 25rem;
+  }
+
+  #container-login {
+    min-width: 50vw;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .logo {
+    width: 20rem;
+  }
+  
+  #container-login {
+    min-width: 70vw;
   }
 }
