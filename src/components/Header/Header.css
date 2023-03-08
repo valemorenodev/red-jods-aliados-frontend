@@ -24,9 +24,34 @@ align-items: center;
 }
 
 /*si la pantalla es mayor a 830*/
-@media  (min-width: 830px){
+@media  (min-width: 768px){
     #logo{
-        width: 500px ;
-        height: 500px;
+        width: 120px ;
+        height: 100px;
     }
+
+    #todo{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+    }
+
+
+.section1{
+display: flex;
+flex-direction: row;
+
+}
+
+.section2{
+    display: flex;
+    flex-direction: row;
+}
+    #imgbarra{
+      display: flex;
+      flex-direction: column;
+    }
+
+  
 }

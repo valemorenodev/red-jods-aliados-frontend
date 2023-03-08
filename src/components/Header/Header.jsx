@@ -9,42 +9,43 @@ import './Header.css'
 
 function Header() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">
-          <img id= 'logo'src="/src/assets/LOGO RED JODS.png" alt="" />
+    <Navbar bg="light" expand="md">
+      <Container id='todo'>
+
+        <div className="section1">
+          <Navbar.Brand as={Link} to={'/'}>
+            <img id='logo' src="/src/assets/LOGO RED JODS.png" alt="" />
+          </Navbar.Brand>
           <p>Bienvenido Administrador</p>
-        </Navbar.Brand>
+        </div>
+
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
 
-          <Nav className="me-auto">
-
-
-            <Nav.Link as={Link} to={'/'}>Inicio
-            </Nav.Link>
-            <Nav.Link as={Link} to={'/Usuario'}>Usuario
-            </Nav.Link>
-            <div className="sesion">
-
-
-              <div className='text'>
-              <Nav.Link as={Link} to={'/Cerrar'}>Cerrar Sesion 
+          <Nav id='section2'>
+            <div className="text">
+              <Nav.Link as={Link} to={'/'}>Inicio
               </Nav.Link>
-              </div>
-                
-                <div className='imgcerrar'>
-                <img  src={iconocerrar} alt="" />
-                </div>
-               
-              
-             
+            </div>
+            <div className="text">
+              <Nav.Link as={Link} to={'/Usuario'}>Usuario
+              </Nav.Link>
+            </div>
+            <div className='text'>
+              <Nav.Link as={Link} to={'/Cerrar'}>Cerrar Sesion
+              </Nav.Link>
+            </div>
+            <div className='imgcerrar'>
+              <img src={iconocerrar} alt="" />
             </div>
 
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <img className='imgbarra'src={imgbarra} alt="" />
+      <div id="imgbarra">
+        <img src={imgbarra} alt="" />
+      </div>
     </Navbar>
   );
 }
