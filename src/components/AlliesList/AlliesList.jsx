@@ -13,7 +13,6 @@ function AlliesList() {
 
     const searcher = (e) => {
         setSearch(e.target.value)
-        //console.log(e.target.value)
     }
 
     return (

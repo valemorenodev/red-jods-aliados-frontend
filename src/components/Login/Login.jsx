@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import logo from '../../assets/images/logo.png'
 import { useForm } from "react-hook-form";
-import { handleSubmit } from "react-hook-form";
+// import { handleSubmit } from "react-hook-form";
 import './Login.css'
 
 const Login = (props) => {
