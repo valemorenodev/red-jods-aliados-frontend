@@ -26,12 +26,71 @@ a {
 }
 
 #container-login {
-  min-width: 40vw;
+  min-width: 80vw;
   min-height: 80vh;
   background-color: white;
   border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .logo {
-  width: 30rem;
+  width: 15rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16pt;
+}
+
+label {
+  color: #193660;
+}
+
+input {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+#sendButton {
+  background-color: #5584F2;
+  color: #ffff;
+  width: 100%;
+  border-radius: 5px 5px;
+}
+
+@media (min-width: 1440px) {
+  .logo {
+    width: 30rem;
+  }
+
+  #container-login {
+    min-width: 50vw;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .logo {
+    width: 25rem;
+  }
+
+  #container-login {
+    min-width: 60vw;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+  .logo {
+    width: 20rem;
+  }
+  
+  #container-login {
+    min-width: 70vw;
+  }
 }
