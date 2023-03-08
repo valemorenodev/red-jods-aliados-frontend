@@ -1,6 +1,5 @@
 import React from "react";
 import testData from "../../TestAliados.json"
-// import { useTable, usePagination } from "react-table"
 import { Table } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoMdAddCircleOutline } from "react-icons/io"
