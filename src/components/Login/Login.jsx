@@ -1,6 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import logo from '../../assets/images/logo.png'
 import { useForm } from "react-hook-form";
+import { handleSubmit } from "react-hook-form";
 import './Login.css'
 
 const Login = (props) => {
@@ -46,7 +47,7 @@ const Login = (props) => {
         </Row>
         <Row className='d-flex justify-content-center align-items-center'>
           <Col>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(submitHandler)}>
               <label htmlFor="email">Nombre de usuario</label>
               <input name="email" value="email" placeholder='example@email.com' {...register("example")} />
               <label htmlFor="password">Constraseña</label>
