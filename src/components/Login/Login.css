@@ -26,7 +26,7 @@ a {
 }
 
 #container-login {
-  min-width: 60vw;
+  min-width: 80vw;
   min-height: 80vh;
   background-color: white;
   border-radius: 1rem;
@@ -71,7 +71,7 @@ input {
   }
 
   #container-login {
-    min-width: 60vw;
+    min-width: 50vw;
   }
 }
 
@@ -81,7 +81,7 @@ input {
   }
 
   #container-login {
-    min-width: 50vw;
+    min-width: 60vw;
   }
 }
 
