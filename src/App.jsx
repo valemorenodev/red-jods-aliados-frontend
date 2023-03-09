@@ -1,9 +1,12 @@
-import Login from './components/Login/Login.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react'
+import RouterApp from './RouterApp'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Login />
+    <div className="App">
+      <RouterApp />
+    </div>
   )
 }
 
