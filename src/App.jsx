@@ -1,10 +1,13 @@
-import Login from './components/Login/Login.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import AlliesList from './components/AlliesList/AlliesList.jsx'
+import React from 'react'
+import RouterApp from './router/RouterApp'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App'
 
 function App() {
   return (
-    <AlliesList />
+    <div className="App">
+      <RouterApp />
+    </div>
   )
 }
 
