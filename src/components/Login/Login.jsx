@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Navigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
-import './Login.css'
+import style from './Login.module.css'
 
 const Login = (props) => {
 
@@ -34,10 +34,11 @@ const Login = (props) => {
 
   return (
     <>
-      <Container id='container-login' className='d-flex justify-content-around align-items-center'>
+    <div className={style.main}>
+      <Container className={style.containerlogin}>
         <Row className='d-flex justify-content-center align-items-center'>
           <Col className='d-flex flex-column' >
-            <img className='logo' src={logo} alt="" />
+            <img className={style.logo} src={logo} alt="" />
           </Col>
         </Row>
         <Row className='d-flex justify-content-center align-items-center'>
@@ -48,11 +49,12 @@ const Login = (props) => {
               <label htmlFor="password">Contraseña</label>
               <input name='password' type='password' defaultValue="" placeholder={'**********'} {...register("password", { required: true })} />
               {errors.password && <span>Inserte la contraseña</span>}
-              <input type="submit" id='sendButton' />
+              <input type="submit" className={style.sendButton} id='sendButton' />
             </form>
           </Col>
         </Row>
       </Container>
+    </div>
     </>
   )
 }
