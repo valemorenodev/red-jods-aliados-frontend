@@ -3,9 +3,11 @@ import testData from "../../TestAliados.json"
 import { Table } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoMdAddCircleOutline } from "react-icons/io"
+import { IoFilterCircleOutline } from "react-icons/io5";
 import style from "./AlliesList.module.css"
 import { useState } from "react";
 import Switch from "../Switch/Switch";
+
 
 function AlliesList() {
     const [search, setSearch] = useState("")
@@ -84,15 +86,19 @@ function AlliesList() {
 
 
         <>
-            <div className="main-container">
+            <div className={style.maincontainer}>
 
-                <div className="addsearch-container">
+                <div className={style.addsearch}>
 
-                    <button className="addbtn">Agregar</button>
+                    <button className={style.addbtn}>Agregar</button>
 
-                    <div className='search'>
-                        <input value={search} onChange={searcher} type="text" placeholder='Buscar...' />
-                        <AiOutlineSearch />
+                    <div className={style.filter}>
+                        <IoFilterCircleOutline color="#464646" style={{ fontSize: '1.8rem', marginRight: '10px', cursor:'pointer' }} />
+                        <div className={style.search}>
+
+                            <input value={search} onChange={searcher} type="text" placeholder='Buscar...' />
+                            <AiOutlineSearch />
+                        </div>
                     </div>
 
                 </div>
@@ -120,12 +126,12 @@ function AlliesList() {
                                 <td>Prosperidad</td>
                                 <td> Trabajo Decente y Crecimiento Económico</td>
                                 <td>30/03/2023</td>
-                                <td>
-                                    <IoMdAddCircleOutline style={{fontSize:'1.5rem'}}/>
+                                <td className={style.status}>
+                                    <IoMdAddCircleOutline style={{ fontSize: '1.7rem', cursor:'pointer' }} />
                                     <Switch />
                                 </td>
                             </tr>
-    
+
                         </tbody>
                     </Table>
                 </div>
