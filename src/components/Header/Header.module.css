@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+a {
+    color: inherit;
+}
+
+.navbars {
+    width: 100%;
+}
+
+.section1 {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2 {
+    width: 50%;
+}
+
+.logo {
+    width: 10rem;
+}
+
+.messages {
+    margin-top: 5%;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.navbars button {
+    border: none;
+    background-color: gainsboro;
+}
+
+.navbars button:focus {
+    box-shadow: none;
+}
+
+.navbars button:hover {
+    transform: scale(1.1);
+}
+
+.navbars .text:hover {
+    transform: scale(1.1);
+}
+
+.icons {
+    color: #558AF2;
+}
+
+.navbaritems {
+    font-weight: 500;
+    font-size: large;
+    align-items: center;
+}
+
+.hrs {
+    width: 100%;
+}
+
+@media (min-width: 1440px) {
+    .navbars {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section1 {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .section2 {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        width: 15rem;
+        margin-left: -5%;
+    }
+
+    .messages {
+        font-size: x-large;
+    }
+
+    .navbaritems {
+        font-weight: 500;
+        font-size: x-large;
+        align-items: center;
+    }
+
+    .hrs {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .navbars {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section1 {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .section2 {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        width: 15rem;
+        margin-left: -10%;
+    }
+
+    .messages {
+        margin-left: -5%;
+        font-size: large;
+    }
+
+    .navbaritems {
+        font-weight: 500;
+        font-size: large;
+        align-items: center;
+    }
+
+    .hrs {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbars {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .section1 {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .section2 {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .logo {
+        margin-left: -15%;
+    }
+
+    .messages {
+        margin-left: -10%;
+    }
+}
