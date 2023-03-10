@@ -12,7 +12,7 @@ a {
     color: inherit;
 }
 
-.navbar-s {
+.navbars {
     width: 100%;
 }
 
@@ -30,45 +30,45 @@ a {
     width: 10rem;
 }
 
-.message-s {
+.messages {
     margin-top: 5%;
     font-weight: bold;
     font-size: medium;
 }
 
-.navbar-s button {
+.navbars button {
     border: none;
     background-color: gainsboro;
 }
 
-.navbar-s button:focus {
+.navbars button:focus {
     box-shadow: none;
 }
 
-.navbar-s button:hover {
+.navbars button:hover {
     transform: scale(1.1);
 }
 
-.navbar-s .text:hover {
-    transform: scale(1.2);
+.navbars .text:hover {
+    transform: scale(1.1);
 }
 
-.icon-s {
+.icons {
     color: #558AF2;
 }
 
-.navbar-items-s {
+.navbaritems {
     font-weight: 500;
     font-size: large;
     align-items: center;
 }
 
-.hr-s {
+.hrs {
     width: 100%;
 }
 
 @media (min-width: 1440px) {
-    .navbar-s {
+    .navbars {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -91,23 +91,23 @@ a {
         margin-left: -5%;
     }
 
-    .message-s {
+    .messages {
         font-size: x-large;
     }
 
-    .navbar-items-s {
+    .navbaritems {
         font-weight: 500;
         font-size: x-large;
         align-items: center;
     }
 
-    .hr-s {
+    .hrs {
         width: 100vw;
     }
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
-    .navbar-s {
+    .navbars {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -130,24 +130,24 @@ a {
         margin-left: -10%;
     }
 
-    .message-s {
+    .messages {
         margin-left: -5%;
         font-size: large;
     }
 
-    .navbar-items-s {
+    .navbaritems {
         font-weight: 500;
         font-size: large;
         align-items: center;
     }
 
-    .hr-s {
+    .hrs {
         width: 100vw;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    .navbar-s {
+    .navbars {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -170,7 +170,7 @@ a {
         margin-left: -15%;
     }
 
-    .message-s {
+    .messages {
         margin-left: -10%;
     }
 }

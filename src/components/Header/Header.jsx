@@ -5,35 +5,35 @@ import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
 import imgbarra from '../../assets/barra_colores.png'
-import './Header.css'
+import style from './Header.module.css'
 
 function Header() {
   return (
-    <Navbar className='navbar-s' bg="light" expand="md">
+    <Navbar className={style.navbars} bg="light" expand="md">
 
-      <Container id='todo'>
+      <Container>
 
-        <div className="section1">
+        <div className={style.section1}>
           <Navbar.Brand as={Link} to={'/'}>
-            <img className='logo' src="/src/assets/logo.png" alt="" />
+            <img className={style.logo} src="/src/assets/logo.png" alt="" />
           </Navbar.Brand>
-          <p className='message-s'>Bienvenido Administrador</p>
+          <p className={style.messages}>Bienvenido Administrador</p>
         </div>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar.Collapse className='section2' id="basic-navbar-nav">
-          <Nav className='navbar-items-s'>
-            <div className="text">
+        <Navbar.Collapse className={style.section2}>
+          <Nav className={style.navbaritems}>
+            <div className={style.text}>
               <Nav.Link as={Link} to={'/'}>Inicio
               </Nav.Link>
             </div>
-            <div className="text">
+            <div className={style.text}>
               <Nav.Link as={Link} to={'/Usuario'}>Usuario
               </Nav.Link>
             </div>
-            <div className='text'>
-              <Nav.Link as={Link} to={'/Cerrar'}> <span className='icon-s'><TbLogout /></span><label className='label-s'>Cerrar Sesión</label>
+            <div className={style.text}>
+              <Nav.Link as={Link} to={'/Cerrar'}> <span className={style.icons}><TbLogout /></span><label className={style.labels}>Cerrar Sesión</label>
               </Nav.Link>
             </div>
           </Nav>
@@ -41,8 +41,8 @@ function Header() {
 
       </Container>
 
-      <div id="imgbarra">
-        <img className='hr-s' src={imgbarra} alt="" />
+      <div>
+        <img className={style.hrs} src={imgbarra} alt="" />
       </div>
 
     </Navbar>
