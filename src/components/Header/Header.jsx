@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
-import imgbarra from '../../assets/barra_colores.png'
+import imgbarra from '../../assets/images/barra_colores.png'
 import style from './Header.module.css'
 
 function Header() {
@@ -15,7 +15,7 @@ function Header() {
 
         <div className={style.section1}>
           <Navbar.Brand as={Link} to={'/'}>
-            <img className={style.logo} src="/src/assets/logo.png" alt="" />
+            <img className={style.logo} src="/src/assets/images/logo.png" alt="" />
           </Navbar.Brand>
           <p className={style.messages}>Bienvenido Administrador</p>
         </div>
