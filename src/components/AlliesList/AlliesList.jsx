@@ -8,7 +8,6 @@ import style from "./AlliesList.module.css"
 import { useState } from "react";
 import Switch from "../Switch/Switch";
 
-
 function AlliesList() {
     const [search, setSearch] = useState("")
 
@@ -17,74 +16,6 @@ function AlliesList() {
     }
 
     return (
-        //     const data = React.useMemo(() => testData, []);
-        //     const columns = React.useMemo(() => [
-        //         {
-        //             Header: "Organización",
-        //             accessor: "organización",
-        //         },
-        //         {
-        //             Header: "Descripción",
-        //             accessor: "descripción",
-        //         },
-        //         {
-        //             Header: "Responsable",
-        //             accessor: "responsable",
-        //         },
-        //         {
-        //             Header: "Eje",
-        //             accessor: "eje",
-        //         },
-        //         {
-        //             Header: "ODS",
-        //             accessor: "ods",
-        //         },
-        //         {
-        //             Header: "Fecha de inicio",
-        //             accessor: "fechainicio",
-        //         },
-        //         {
-        //             Header: "Estado",
-        //             accessor: "estado",
-        //         }
-
-        //     ],[]);
-
-        //     const { getTableProps, getTableBodyProps, headerGroups, page, prepareRow } = useTable({columns, data});
-
-        //     return (
-        //         <div className='AlliesList'>
-        //             <div className='container'>
-        //                 <table {...getTableProps()}>
-        //                     <thead>
-        //                         {headerGroups.map((headerGroup) => (
-        //                             <tr {...headerGroup.getHeaderGroupProps()}>
-        //                                 {headerGroup.headers.map((column) => (
-        //                                     <th {...column.getHeaderProps()}>
-        //                                         {column.render("Header")}
-        //                                     </th>
-        //                                 ))}
-        //                             </tr>
-        //                         ))}
-        //                     </thead>
-        //                     <tbody {...getTableBodyProps()}>
-        //                         {rows.map((row) => {
-        //                             prepareRow(row)
-        //                             return(
-        //                                 <tr {...row.getRowProps()}>
-        //                                     {row.cells.map((cell) => (
-        //                                         <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
-        //                                     ))}
-        //                                 </tr>
-        //                             )
-        //                         })}
-
-        //                     </tbody>
-        //                 </table>
-        //             </div>
-        //         </div>
-
-
         <>
             <div className={style.maincontainer}>
 
@@ -93,7 +24,7 @@ function AlliesList() {
                     <button className={style.addbtn}>Agregar</button>
 
                     <div className={style.filter}>
-                        <IoFilterCircleOutline color="#464646" style={{ fontSize: '1.8rem', marginRight: '10px', cursor:'pointer' }} />
+                        <IoFilterCircleOutline color="#464646" style={{ fontSize: '1.8rem', marginRight: '10px', cursor: 'pointer' }} />
                         <div className={style.search}>
 
                             <input value={search} onChange={searcher} type="text" placeholder='Buscar...' />
@@ -102,7 +33,6 @@ function AlliesList() {
                     </div>
 
                 </div>
-
 
 
                 <div className="p-4 rounded" id={style.table}>
@@ -127,11 +57,10 @@ function AlliesList() {
                                 <td> Trabajo Decente y Crecimiento Económico</td>
                                 <td>30/03/2023</td>
                                 <td className={style.status}>
-                                    <IoMdAddCircleOutline style={{ fontSize: '1.7rem', cursor:'pointer' }} />
+                                    <IoMdAddCircleOutline style={{ fontSize: '1.7rem', cursor: 'pointer' }} />
                                     <Switch />
                                 </td>
                             </tr>
-
                         </tbody>
                     </Table>
                 </div>

@@ -1,12 +1,12 @@
 import React from 'react'
-import RouterApp from './router/RouterApp'
+import AlliesList from './components/AlliesList/AlliesList'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App'
 
 function App() {
   return (
     <div className="App">
-      <RouterApp />
+      <AlliesList />
     </div>
   )
 }
