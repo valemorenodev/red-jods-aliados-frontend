@@ -1,7 +1,7 @@
 import React from 'react'
-import RouterApp from './router/RouterApp'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App'
+import './styles/GlobalStyles.css';
+import RouterApp from './router/RouterApp'
 
 function App() {
   return (
