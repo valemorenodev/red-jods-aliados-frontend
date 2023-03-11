@@ -21,16 +21,13 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
-<<<<<<< HEAD
     "react-hook-form": "^7.43.5",
     "react-table": "^7.8.0",
-    "sweetalert2": "^11.7.3"
-=======
+    "sweetalert2": "^11.7.3",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.5",
     "react-table": "^7.8.0",
     "sweetalert2": "^11.7.3",
     "vite": "^4.1.0"
->>>>>>> 3e8f30922ca29c56e34f0dd8d26acce97596645a
   }
 }
