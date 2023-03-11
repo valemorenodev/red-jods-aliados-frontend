@@ -1,0 +1,46 @@
+import {
+    font-family: Poppins;
+    src: url('@fontsource/Poppins');
+}
+
+:root {
+    --color-primary-one: #558AF2;
+    --color-primary-two: #FEB834;
+    --color-primary-three: #De3c3c;
+    --color-primary-four: #193660;
+    --color-primary-five: #5CA84D;
+
+    --color-secondary-one: #EDBB31;
+    --color-secondary-two: #EDF5FC;
+    --color-secondary-three: #FD5E53;
+    --color-secondary-four: #88FFFC;
+    --color-secondary-five: #000000;
+
+    --color-background: var(--color-secondary-two);
+    --color-text: var(--color-secondary-one);
+    --color-title: var(--color-primary-four);
+
+    --font: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    background-color: var(--color-background);
+    font-family: var(--font);
+    color:var(--color-title);
+}
+
+a {
+    color: inherit;
+}
