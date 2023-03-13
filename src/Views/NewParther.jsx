@@ -3,7 +3,7 @@ import Header from '../components/Header/Header'
 import FormInputs from '../components/NewPartner/FormInputs';
 import Footer from '../components/Footer/Footer'
 
-const Views = () => {
+const NewParther = () => {
   return (
     <div>
       <Header />
@@ -13,4 +13,4 @@ const Views = () => {
   );
 }
 
-export default Views;
+export default NewParther;
