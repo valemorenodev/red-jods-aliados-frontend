@@ -6,6 +6,7 @@
     text-decoration: none;
     list-style: none;
     outline: none;
+    background-color: --color-background;
 }
 
 a {
@@ -38,7 +39,7 @@ a {
 
 .navbars button {
     border: none;
-    background-color:var(--color-background);
+    background-color: var(--color-background);
 }
 
 .navbars button:focus {
@@ -54,7 +55,7 @@ a {
 }
 
 .icons {
-    color:var(--color-primary-one);
+    color: var(--color-primary-one);
 }
 
 .navbaritems {
