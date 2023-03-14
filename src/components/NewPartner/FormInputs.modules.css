@@ -1,0 +1,28 @@
+#ContainerNewParther {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color-secondary-two);
+  text-align: justify;
+}
+
+#FormInputs {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#FormInputs form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#FormInputs input {
+  margin: 0.5rem;
+  background-color: var(--color-secondary-six);
+  border: 1px solid #558AF2;
+  border-radius: 5px;
+}

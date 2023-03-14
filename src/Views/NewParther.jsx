@@ -8,8 +8,10 @@ const NewParther = () => {
   return (
     <div>
       <Header />
-      <FormInputs />
-      <FormFiles />
+      <div id='ContainerNewParther'>
+        <FormInputs />
+        <FormFiles />
+      </div>
       <Footer />
     </div>
   );
