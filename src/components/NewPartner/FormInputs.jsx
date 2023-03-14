@@ -27,14 +27,18 @@ const FormInputs = () => {
         <input name="PartnerTwitter" {...register("PartnerODS", { pattern: /^[A-Za-z]+$/i })} />
         <label htmlFor="PartnerFacebook">Facebook (Link)</label>
         <input name="PartnerFacebook" {...register("PartnerFacebook", { pattern: /^[A-Za-z]+$/i })} />
-        <label htmlFor="">Descripciòn* </label>
-        <input name="PartnerFacebook" {...register("PartnerFacebook", { required: true, pattern: /^[A-Za-z]+$/i })} />
-        <label htmlFor="">Objetivo de Alianza*</label>
-        <input name="PartnerFacebook" {...register("PartnerFacebook", { pattern: /^[A-Za-z]+$/i })} />
-        <label htmlFor="">Fecha de inicio*</label>
-        <input type="date"{...register("PartnerFacebook", { required: true })} />
-        <label htmlFor="">Fecha finalizacion</label>
-        <input type="date"{...register("PartnerFacebook")} />
+        <label htmlFor="PartnerInstagram">Instagram (Link)</label>
+        <input name="PartnerInstagram" {...register("PartnerInstagram", { pattern: /^[A-Za-z]+$/i })} />
+        <label htmlFor="PartnerLinkedIn">LinkedIn (Link)</label>
+        <input name="PartnerLinkedIn" {...register("PartnerLinkedIn", { pattern: /^[A-Za-z]+$/i })} />
+        <label htmlFor="PartnerDescription">Descripciòn* </label>
+        <input name="PartnerDescription" {...register("PartnerDescription", { required: true, pattern: /^[A-Za-z]+$/i })} />
+        <label htmlFor="PartnerObjetive">Objetivo de Alianza*</label>
+        <input name="PartnerObjetive" {...register("PartnerObjetive", { required: true, pattern: /^[A-Za-z]+$/i })} />
+        <label htmlFor="BeginDate">Fecha de inicio*</label>
+        <input name="BeginDate" type="date"{...register("BeginDate", { required: true })} />
+        <label htmlFor="FinishDate">Fecha finalizacion</label>
+        <input name='FinishDate' type="date"{...register("FinishDate", { required: true })} />
       </form>
     </div>
   );
