@@ -17,7 +17,7 @@ import {
     --color-secondary-five: #000000;
 
     --color-background: var(--color-secondary-two);
-    --color-text: var(--color-secondary-one);
+    --color-text: var(--color-secondary-five);
     --color-title: var(--color-primary-four);
 
     --font: "Poppins", sans-serif;
