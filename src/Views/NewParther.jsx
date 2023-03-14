@@ -9,8 +9,10 @@ const NewParther = () => {
     <div>
       <Header />
       <div id='ContainerNewParther'>
-        <FormInputs />
-        <FormFiles />
+        <div id='FormInputs'>
+          <FormInputs />
+          <FormFiles />
+        </div>
       </div>
       <Footer />
     </div>

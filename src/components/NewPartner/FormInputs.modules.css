@@ -12,16 +12,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  background-color: var(--color-secondary-six);
+  width: 80%;
 }
 
-#FormInputs form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+#PartnerImg {
+  width: 137px;
+  max-width: 80%;
+}
+
+#FormInputs form,
+label,
+h4,
+p,
+div {
+  background-color: var(--color-secondary-six);
 }
 
 #FormInputs input {
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
   background-color: var(--color-secondary-six);
   border: 1px solid #558AF2;
   border-radius: 5px;
