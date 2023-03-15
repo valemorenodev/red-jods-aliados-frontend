@@ -1,91 +1,36 @@
 import React from "react";
-import testData from "../../TestAliados.json"
+//import { useState } from "react";
+//import axios from "axios";
 import { Table } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoMdAddCircleOutline } from "react-icons/io"
 import { IoFilterCircleOutline } from "react-icons/io5";
-import style from "./AlliesList.module.css"
-import { useState } from "react";
 import Switch from "../Switch/Switch";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import style from "./AlliesList.module.css"
+//import data from  "../../TestAliados.json"
 
 
 function AlliesList() {
-    const [search, setSearch] = useState("")
+//     const [alliesList, setAlliesList] = useState([]);
+//   useEffect(() => {
+//     async function fetchData() {
+//       const { data } = await allies.get("/allies");
+//       setAlliesList(data);
+//     }
 
-    const searcher = (e) => {
-        setSearch(e.target.value)
-    }
+//     fetchData();
+//   }, []);
+
+    // const renderedList = data.map((item) =>
+
+    // )
 
     return (
-        //     const data = React.useMemo(() => testData, []);
-        //     const columns = React.useMemo(() => [
-        //         {
-        //             Header: "Organización",
-        //             accessor: "organización",
-        //         },
-        //         {
-        //             Header: "Descripción",
-        //             accessor: "descripción",
-        //         },
-        //         {
-        //             Header: "Responsable",
-        //             accessor: "responsable",
-        //         },
-        //         {
-        //             Header: "Eje",
-        //             accessor: "eje",
-        //         },
-        //         {
-        //             Header: "ODS",
-        //             accessor: "ods",
-        //         },
-        //         {
-        //             Header: "Fecha de inicio",
-        //             accessor: "fechainicio",
-        //         },
-        //         {
-        //             Header: "Estado",
-        //             accessor: "estado",
-        //         }
-
-        //     ],[]);
-
-        //     const { getTableProps, getTableBodyProps, headerGroups, page, prepareRow } = useTable({columns, data});
-
-        //     return (
-        //         <div className='AlliesList'>
-        //             <div className='container'>
-        //                 <table {...getTableProps()}>
-        //                     <thead>
-        //                         {headerGroups.map((headerGroup) => (
-        //                             <tr {...headerGroup.getHeaderGroupProps()}>
-        //                                 {headerGroup.headers.map((column) => (
-        //                                     <th {...column.getHeaderProps()}>
-        //                                         {column.render("Header")}
-        //                                     </th>
-        //                                 ))}
-        //                             </tr>
-        //                         ))}
-        //                     </thead>
-        //                     <tbody {...getTableBodyProps()}>
-        //                         {rows.map((row) => {
-        //                             prepareRow(row)
-        //                             return(
-        //                                 <tr {...row.getRowProps()}>
-        //                                     {row.cells.map((cell) => (
-        //                                         <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
-        //                                     ))}
-        //                                 </tr>
-        //                             )
-        //                         })}
-
-        //                     </tbody>
-        //                 </table>
-        //             </div>
-        //         </div>
-
-
         <>
+
+            <Header />
             <div className={style.maincontainer}>
 
                 <div className={style.addsearch}>
@@ -96,7 +41,7 @@ function AlliesList() {
                         <IoFilterCircleOutline color="#464646" style={{ fontSize: '1.8rem', marginRight: '10px', cursor:'pointer' }} />
                         <div className={style.search}>
 
-                            <input value={search} onChange={searcher} type="text" placeholder='Buscar...' />
+                            <input type="text" placeholder='Buscar...' />
                             <AiOutlineSearch />
                         </div>
                     </div>
@@ -136,6 +81,7 @@ function AlliesList() {
                     </Table>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

@@ -4,25 +4,25 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
-import imgbarra from '../../assets/barra_colores.png'
-import './Header.css'
+import ColorBar from "../ColorBar/ColorBar"
+import style from './Header.module.css'
 
 function Header() {
   return (
-    <Navbar className='navbar-s' bg="light" expand="md">
+    <Navbar className="navbar-s" expand="md" id={style.header}>
 
-      <Container id='todo'>
+      <Container id={style.main}>
 
-        <div className="section1">
-          <Navbar.Brand as={Link} to={'/'}>
-            <img className='logo' src="/src/assets/logo.png" alt="" />
+        <div className={style.section1}>
+          <Navbar.Brand as={Link} to={'/'} className={style.navbrand}> 
+            <img className={style.logo} src="/src/assets/logo.png" alt="LOGO" />
           </Navbar.Brand>
-          <p className='message-s'>Bienvenido Administrador</p>
+          <div className={style.message}>Bienvenido Administrador</div>
         </div>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" id={style.menu} />
 
-        <Navbar.Collapse className='section2' id="basic-navbar-nav">
+        <Navbar.Collapse className={style.section2} id="basic-navbar-nav">
           <Nav className='navbar-items-s'>
             <div className="text">
               <Nav.Link as={Link} to={'/'}>Inicio
@@ -38,13 +38,10 @@ function Header() {
             </div>
           </Nav>
         </Navbar.Collapse>
-
       </Container>
-
-      <div id="imgbarra">
-        <img className='hr-s' src={imgbarra} alt="" />
+      <div className={style.colorbar}>
+        <ColorBar />
       </div>
-
     </Navbar>
   );
 }
