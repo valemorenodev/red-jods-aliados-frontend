@@ -46,15 +46,15 @@ a {
   margin-bottom: 35px;
 }
 
-form {
+.forms {
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 12pt;
 }
 
-label {
-  color: #193660;
+.label {
+  color: var(--color-title);
 }
 
 #recover{
@@ -75,8 +75,8 @@ input#inputlog{
   width: 100%;
   border-radius: 5px 5px;
   padding: 8px;
-  background-color: #5584F2;
-  color: #ffff;
+  background-color: var(--color-primary-one);
+  color: var(--color-background);
   font-weight: 500;
 }
 

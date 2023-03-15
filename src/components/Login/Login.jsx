@@ -53,29 +53,29 @@ const Login = (props) => {
 
   return (
     <>
-    <div className={style.main}>
-      <Container className={style.containerlogin}>
-        <Row className='d-flex justify-content-center align-items-center'>
-          <Col className='d-flex flex-column' >
-            <img className={style.logo} src={logo} alt="" />
-          </Col>
-        </Row>
-        <Row className='d-flex justify-content-center align-items-center'>
-          <Col>
-          <form onSubmit={handleSubmit(submitHandler)}>
-              <label htmlFor="email">Nombre de usuario</label>
-              <input name="email" defaultValue="" id={style.inputlog} placeholder='example@email.com' {...register("email")}/>
-              <label htmlFor="pass">Contraseña</label>
+      <div className={style.main}>
+        <Container className={style.containerlogin}>
+          <Row className='d-flex justify-content-center align-items-center'>
+            <Col className='d-flex flex-column' >
+              <img className={style.logo} src={logo} alt="" />
+            </Col>
+          </Row>
+          <Row className='d-flex justify-content-center align-items-center'>
+            <Col>
+            <form className={style.forms} onSubmit={handleSubmit(submitHandler)}>
+                <label className={style.labels} htmlFor="email">Nombre de usuario</label>
+                <input className={style.inputs} name="email" defaultValue="" id={style.inputlog} placeholder='example@email.com' {...register("email")}/>
+                <label className={style.labels} htmlFor="pass">Contraseña</label>
               <label htmlFor="recover" id={style.recover}>Recuperar contraseña</label>
-              <input name='pass' type='password' defaultValue="" id={style.inputlog} placeholder={'**********'} {...register("pass", { required: true })} />
-              {errors.pass && <span>Inserte la contraseña</span>}
-              <input type="submit" value="Ingresar" className={style.sendButton} />
-            </form>
-          </Col>
-        </Row>
-      </Container>
+                <input className={style.inputs} name='pass' type='password' defaultValue="" id={style.inputlog} placeholder={'**********'} {...register("pass", { required: true })} />
+                {errors.pass && <span>Inserte la contraseña</span>}
+                <input type="submit" value="Ingresar" className={style.sendButton} />
+              </form>
+            </Col>
+          </Row>
+        </Container>
       <img src={wheel} alt="wheel" className={style.wheel}/>
-    </div>
+      </div>
     </>
   )
 }

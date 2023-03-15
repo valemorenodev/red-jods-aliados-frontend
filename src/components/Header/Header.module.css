@@ -52,34 +52,34 @@ a {
     font-size: 12px;
 }
 
-.navbar-s button {
+.navbars button {
     border: none;
-    background-color: gainsboro;
+    background-color: var(--color-background);
 }
 
-.navbar-s button:focus {
+.navbars button:focus {
     box-shadow: none;
 }
 
-.navbar-s button:hover {
+.navbars button:hover {
     transform: scale(1.1);
 }
 
-.navbar-s .text:hover {
-    transform: scale(1.2);
+.navbars .text:hover {
+    transform: scale(1.1);
 }
 
-.icon-s {
-    color: #558AF2;
+.icons {
+    color: var(--color-primary-one);
 }
 
-.navbar-items-s {
+.navbaritems {
     font-weight: 500;
     font-size: large;
     align-items: center;
 }
 
-.hr-s {
+.hrs {
     width: 100%;
 }
 
@@ -87,8 +87,12 @@ a {
     width: 80%;
 }
 
+.colorbar{
+    width: 80%;
+}
+
 @media (min-width: 1440px) {
-    .navbar-s {
+    .navbars {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -111,17 +115,17 @@ a {
         margin-left: -5%;
     }
 
-    .message-s {
+    .messages {
         font-size: x-large;
     }
 
-    .navbar-items-s {
+    .navbaritems {
         font-weight: 500;
         font-size: x-large;
         align-items: center;
     }
 
-    .hr-s {
+    .hrs {
         width: 100vw;
     }
 }
@@ -150,24 +154,24 @@ a {
         margin-left: -10%;
     }
 
-    .message-s {
+    .messages {
         margin-left: -5%;
         font-size: large;
     }
 
-    .navbar-items-s {
+    .navbaritems {
         font-weight: 500;
         font-size: large;
         align-items: center;
     }
 
-    .hr-s {
+    .hrs {
         width: 100vw;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    .navbar-s {
+    .navbars {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -190,7 +194,7 @@ a {
         margin-left: -15%;
     }
 
-    .message-s {
+    .messages {
         margin-left: -10%;
     }
 }
