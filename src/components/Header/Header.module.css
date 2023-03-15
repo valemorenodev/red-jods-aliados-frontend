@@ -38,7 +38,6 @@ a {
 
 .navbars button {
     border: none;
-    background-color:var(--color-background);
 }
 
 .navbars button:focus {
@@ -54,7 +53,7 @@ a {
 }
 
 .icons {
-    color:var(--color-primary-one);
+    color: var(--color-primary-one);
 }
 
 .navbaritems {

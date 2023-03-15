@@ -10,7 +10,7 @@ import style from './Header.module.css'
 function Header() {
   return (
     <>
-      <Navbar className={style.navbars} bg="light" expand="md">
+      <Navbar className={style.navbars} expand="md">
         <Container>
 
           <div className={style.section1}>
