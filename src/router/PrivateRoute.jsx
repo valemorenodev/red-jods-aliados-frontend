@@ -1,8 +1,8 @@
-// import { useLocation } from "react-router"
+import { Navigate, useLocation } from "react-router-dom"
 
-// export const PrivateRoute = ({children}) => {
+export const PrivateRoute = ({children}) => {
     
-//     const {state} = useLocation()
+    const {state} = useLocation()
 
-//     return state?.logged ? children : 
-// }
+    return state?.logged ? children : <Navigate to='/' />;
+}

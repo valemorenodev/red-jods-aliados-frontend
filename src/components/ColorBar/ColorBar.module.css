@@ -1,31 +1,32 @@
-.main {
-    width: 100vw;
-    height: 45px;
+.container{
+    width: 100%;
+    height: 5px;
     display: flex;
     bottom: 0;
 }
 
-.lightblue {
+.lightblue{
     width: 20vw;
     background-color: #558AF2;
 }
 
-.yellow {
+.yellow{
     width: 20vw;
     background-color: #F9AF28;
 }
 
-.red {
+.red{
     width: 20vw;
     background-color: #DE3C3C;
 }
 
-.darkblue {
+.darkblue{
     width: 20vw;
     background-color: #193660;
 }
 
-.green {
+.green{
     width: 20vw;
     background-color: #5CA84D;
 }
+

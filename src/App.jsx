@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/GlobalStyles.css';
 import RouterApp from './router/RouterApp'
+import './App.css'
 
 function App() {
   return (
