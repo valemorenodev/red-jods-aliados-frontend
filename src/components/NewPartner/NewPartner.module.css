@@ -138,10 +138,6 @@ hr {
         align-items: center;
     }
 
-    .FormTitleP {
-        margin-left: 1rem;
-    }
-
     hr {
         display: none;
     }
@@ -154,10 +150,6 @@ hr {
         align-items: center;
     }
 
-    .FormTitleP {
-        margin-left: 1rem;
-    }
-
     hr {
         display: none;
     }
@@ -168,10 +160,6 @@ hr {
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-
-    .FormTitleP {
-        margin-left: 1rem;
     }
 
     hr {
