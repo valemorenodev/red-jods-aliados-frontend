@@ -6,7 +6,6 @@
     text-decoration: none;
     list-style: none;
     outline: none;
-    background-color: --color-background;
 }
 
 a {
@@ -39,7 +38,6 @@ a {
 
 .navbars button {
     border: none;
-    background-color: var(--color-background);
 }
 
 .navbars button:focus {

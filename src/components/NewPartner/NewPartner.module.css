@@ -1,0 +1,180 @@
+.ContainerForm {
+    width: 80%;
+    min-height: 80vh;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-tertiary-one);
+}
+
+.FormPartner {
+    padding-right: 1rem;
+}
+
+.FormTitle {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    color: var(--color-tertiary-three);
+}
+
+.FormTitleH {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.FormTitleP {
+    font-size: medium;
+    font-weight: lighter;
+}
+
+.FormRequired {
+    font-size: larger;
+    font-weight: bolder;
+    color: var(--color-secondary-three);
+}
+
+.FormPartner label {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--color-tertiary-three);
+}
+
+.FormInput {
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--color-primary-one);
+    background-color: var(--color-secondary-six);
+}
+
+hr {
+    border: 0.1rem solid var(--color-text);
+    opacity: initial;
+}
+
+.FileTable {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    text-align: left;
+    padding: 1rem;
+}
+
+.OptionIcon {
+    width: 50%;
+}
+
+.FileIcon,
+.FileRead,
+.FileDelete {
+    font-size: 20pt;
+    padding: 0.2rem;
+}
+
+.FileIcon {
+    color: var(--color-primary-one);
+}
+
+.FileRead {
+    color: var(--color-primary-five);
+}
+
+.FileDelete {
+    color: var(--color-secondary-three);
+}
+
+.FormImg,
+.FormFile {
+    margin-bottom: 0.5rem;
+    margin-left: -0.1rem;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    overflow: hidden;
+}
+
+.FormInputImg,
+.FormInputFile {
+    position: absolute;
+    opacity: 0;
+}
+
+.FormButtonImg,
+.FormButtonFile {
+    width: 98%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px 5px;
+    background-color: var(--color-secondary-three);
+    cursor: pointer;
+}
+
+.FormButton {
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-primary-five);
+    color: var(--color-background);
+    font-weight: 700;
+}
+
+.FormPartner .FormButtonFile,
+.FormPartner .FormButtonImg {
+    text-align: center;
+    color: var(--color-background);
+}
+
+@media (min-width: 1440px) {
+    .FormTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .FormTitleP {
+        margin-left: 1rem;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .FormTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .FormTitleP {
+        margin-left: 1rem;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .FormTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .FormTitleP {
+        margin-left: 1rem;
+    }
+
+    hr {
+        display: none;
+    }
+}
