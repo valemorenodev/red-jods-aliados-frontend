@@ -6,6 +6,7 @@
     text-decoration: none;
     list-style: none;
     outline: none;
+    background-color: --color-background;
 }
 
 a {
@@ -20,186 +21,189 @@ a {
 }
 
 #main {
+    width: 100%;
+    display: flex;
+}
+
+.section1 {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+}
+
+#menu {
+    border-style: none;
+    color: blue;
+}
+
+.section2 {
+    width: 50%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.logo {
+    width: 8rem;
+
+}
+
+.message {
+    width: 6rem;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.navbars button {
+    border: none;
+    background-color: var(--color-background);
+}
+
+.navbars button:focus {
+    box-shadow: none;
+}
+
+.navbars button:hover {
+    transform: scale(1.1);
+}
+
+.navbars .text:hover {
+    transform: scale(1.1);
+}
+
+.icons {
+    color: var(--color-primary-one);
+}
+
+.navbaritems {
+    font-weight: 500;
+    font-size: large;
+    align-items: center;
+}
+
+.hrs {
+    width: 100%;
+}
+
+.colorbar {
+    width: 80%;
+}
+
+.colorbar {
+    width: 80%;
+}
+
+.colorbar {
+    width: 80%;
+}
+
+.colorbar {
+    width: 80%;
+}
+
+@media (min-width: 1440px) {
     .navbars {
-        width: 100%;
         display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     .section1 {
         width: 50%;
         display: flex;
-        align-items: flex-end;
-    }
-
-    #menu {
-        border-style: none;
-        color: blue;
+        flex-direction: row;
     }
 
     .section2 {
         width: 50%;
+        display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
     }
 
     .logo {
-        width: 8rem;
-
+        width: 15rem;
+        margin-left: -5%;
     }
 
-    .message {
-        width: 6rem;
-        font-weight: bold;
-        font-size: 12px;
+    .messages {
+        font-size: x-large;
     }
 
-    .navbars button {
-        .navbars button {
-            border: none;
-            background-color: var(--color-background);
-        }
+    .navbaritems {
+        font-weight: 500;
+        font-size: x-large;
+        align-items: center;
+    }
 
-        .navbars button:focus {
-            .navbars button:focus {
-                box-shadow: none;
-            }
+    .hrs {
+        width: 100vw;
+    }
+}
 
-            .navbars button:hover {
-                .navbars button:hover {
-                    transform: scale(1.1);
-                }
+@media (min-width: 1024px) and (max-width: 1930px) {
+    .navbar-s {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 
-                .navbars .text:hover {
-                    transform: scale(1.1);
-                }
+    .section1 {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+    }
 
-                .icons {
-                    color: var(--color-primary-one);
-                }
+    .section2 {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
 
-                .navbaritems {
-                    font-weight: 500;
-                    font-size: large;
-                    align-items: center;
-                }
+    .logo {
+        width: 15rem;
+        margin-left: -10%;
+    }
 
-                .hrs {
-                    width: 100%;
-                    position: absolute;
-                }
+    .messages {
+        margin-left: -5%;
+        font-size: large;
+    }
 
-                .colorbar {
-                    width: 80%;
-                }
+    .navbaritems {
+        font-weight: 500;
+        font-size: large;
+        align-items: center;
+    }
 
-                .colorbar {
-                    width: 80%;
-                }
+    .hrs {
+        width: 100vw;
+    }
+}
 
-                @media (min-width: 1440px) {
-                    .navbars {
-                        display: flex;
-                        align-items: center;
-                        flex-direction: column;
-                    }
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbars {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 
-                    .section1 {
-                        width: 50%;
-                        display: flex;
-                        flex-direction: row;
-                    }
+    .section1 {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
 
-                    .section2 {
-                        width: 50%;
-                        display: flex;
-                        justify-content: flex-end;
-                    }
+    .section2 {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
 
-                    .logo {
-                        width: 15rem;
-                        margin-left: -5%;
-                    }
+    .logo {
+        margin-left: -15%;
+    }
 
-                    .messages {
-                        font-size: x-large;
-                    }
-
-                    .navbaritems {
-                        font-weight: 500;
-                        font-size: x-large;
-                        align-items: center;
-                    }
-
-                    .hrs {
-                        width: 100vw;
-                    }
-                }
-
-                @media (min-width: 1024px) and (max-width: 1439px) {
-                    .navbars {
-                        display: flex;
-                        align-items: center;
-                        flex-direction: column;
-                    }
-
-                    .section1 {
-                        width: 50%;
-                        display: flex;
-                        flex-direction: row;
-                    }
-
-                    .section2 {
-                        width: 50%;
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-
-                    .logo {
-                        width: 15rem;
-                        margin-left: -10%;
-                    }
-
-                    .messages {
-                        margin-left: -5%;
-                        font-size: large;
-                    }
-
-                    .navbaritems {
-                        font-weight: 500;
-                        font-size: large;
-                        align-items: center;
-                    }
-
-                    .hrs {
-                        width: 100vw;
-                    }
-                }
-
-                @media (min-width: 768px) and (max-width: 1023px) {
-                    .navbars {
-                        display: flex;
-                        align-items: center;
-                        flex-direction: column;
-                    }
-
-                    .section1 {
-                        width: 50%;
-                        display: flex;
-                        flex-direction: row;
-                        align-items: flex-end;
-                    }
-
-                    .section2 {
-                        width: 50%;
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-
-                    .logo {
-                        margin-left: -15%;
-                    }
-
-                    .messages {
-                        margin-left: -10%;
-                    }
-                }
+    .messages {
+        margin-left: -10%;
+    }
+}
