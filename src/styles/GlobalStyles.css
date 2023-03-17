@@ -14,10 +14,14 @@ import {
     --color-secondary-two: #EDF5FC;
     --color-secondary-three: #FD5E53;
     --color-secondary-four: #88FFFC;
-    --color-secondary-five: #000000;
+    --color-secondary-five: #F9AF28;
+
+    --color-tertiary-one: #FFFFFF;
+    --color-tertiary-two: #C0C0C0;
+    --color-tertiary-three: #000000;
 
     --color-background: var(--color-secondary-two);
-    --color-text: var(--color-secondary-one);
+    --color-text: var(--color-tertiary-three);
     --color-title: var(--color-primary-four);
 
     --font: "Poppins", sans-serif;
@@ -39,6 +43,10 @@ body {
     background-color: var(--color-background);
     font-family: var(--font);
     color: var(--color-title);
+}
+
+a {
+    color: inherit;
 }
 
 a {

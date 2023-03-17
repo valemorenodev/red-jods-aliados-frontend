@@ -2,6 +2,7 @@
     width: 100vw;
     height: 45px;
     display: flex;
+    position: relative;
     bottom: 0;
 }
 
@@ -23,6 +24,11 @@
 .darkblue {
     width: 20vw;
     background-color: #193660;
+}
+
+.green {
+    width: 20vw;
+    background-color: #5CA84D;
 }
 
 .green {

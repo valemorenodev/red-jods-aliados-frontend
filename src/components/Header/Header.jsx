@@ -4,45 +4,49 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
-import ColorBar from "../ColorBar/ColorBar"
+import imgbarra from '../../assets/images/barra_colores.png'
 import style from './Header.module.css'
 
 function Header() {
   return (
-    <Navbar className="navbar-s" expand="md" id={style.header}>
+    <>
+      <Navbar className={style.navbars} expand="md">
+        <Container>
 
-      <Container id={style.main}>
+          <div className={style.section1}>
+            <Navbar.Brand as={Link} to={'/'}>
+              <img className={style.logo} src="/src/assets/images/logo.png" alt="" />
+            </Navbar.Brand>
+            <p className={style.messages}>Bienvenido Administrador</p>
+          </div>
 
-        <div className={style.section1}>
-          <Navbar.Brand as={Link} to={'/'} className={style.navbrand}> 
-            <img className={style.logo} src="/src/assets/logo.png" alt="LOGO" />
-          </Navbar.Brand>
-          <div className={style.message}>Bienvenido Administrador</div>
-        </div>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" id={style.menu} />
+          <Navbar.Collapse className={style.section2}>
+            <Nav className={style.navbaritems}>
+              <div className={style.text}>
+                <Nav.Link as={Link} to={'/'}>Inicio
+                </Nav.Link>
+              </div>
+              <div className={style.text}>
+                <Nav.Link as={Link} to={'/Usuario'}>Usuario
+                </Nav.Link>
+              </div>
+              <div className={style.text}>
+                <Nav.Link as={Link} to={'/Cerrar'}> <span className={style.icons}><TbLogout /></span><label className={style.labels}>Cerrar Sesión</label>
+                </Nav.Link>
+              </div>
+            </Nav>
+          </Navbar.Collapse>
 
-        <Navbar.Collapse className={style.section2} id="basic-navbar-nav">
-          <Nav className='navbar-items-s'>
-            <div className="text">
-              <Nav.Link as={Link} to={'/'}>Inicio
-              </Nav.Link>
-            </div>
-            <div className="text">
-              <Nav.Link as={Link} to={'/Usuario'}>Usuario
-              </Nav.Link>
-            </div>
-            <div className='text'>
-              <Nav.Link as={Link} to={'/Cerrar'}> <span className='icon-s'><TbLogout /></span><label className='label-s'>Cerrar Sesión</label>
-              </Nav.Link>
-            </div>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-      <div className={style.colorbar}>
-        <ColorBar />
+        </Container>
+      </Navbar>
+
+      <div>
+        <img className={style.hrs} src={imgbarra} alt="" />
       </div>
-    </Navbar>
+
+    </>
   );
 }
 
