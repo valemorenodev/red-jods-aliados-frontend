@@ -1,87 +1,147 @@
-import React from "react";
-//import { useState } from "react";
-//import axios from "axios";
-import { Table } from "react-bootstrap";
+import React, { useState } from 'react';
+import { useTable, useFilters, usePagination } from 'react-table';
+import testData from '../../TestAliados.json'
+import style from '../AlliesList/AlliesList.module.css'
+import Switch from '../Switch/Switch'
 import { AiOutlineSearch } from "react-icons/ai"
-import { IoMdAddCircleOutline } from "react-icons/io"
-import { IoFilterCircleOutline } from "react-icons/io5";
-import Switch from "../Switch/Switch";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import style from "./AlliesList.module.css"
-//import data from  "../../TestAliados.json"
-
+import { IoChevronBackSharp } from "react-icons/io5"
+import { IoChevronForwardSharp } from "react-icons/io5"
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 function AlliesList() {
-//     const [alliesList, setAlliesList] = useState([]);
-//   useEffect(() => {
-//     async function fetchData() {
-//       const { data } = await allies.get("/allies");
-//       setAlliesList(data);
-//     }
+    const columns = React.useMemo(
+        () => [
+            {
+                Header: 'Organización',
+                accessor: 'organizacion',
+            },
+            {
+                Header: 'Descripción',
+                accessor: 'descripcion',
+            },
+            {
+                Header: 'Responsable',
+                accessor: 'responsable',
+            },
+            {
+                Header: 'Eje',
+                accessor: 'eje',
+            },
+            {
+                Header: 'ODS',
+                accessor: 'ods',
+            },
+            {
+                Header: 'Fecha de Inicio',
+                accessor: 'fechainicio',
+            },
+        ],
+        []
+    );
 
-//     fetchData();
-//   }, []);
+    const [data, setData] = useState(testData);
 
-    // const renderedList = data.map((item) =>
+    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
 
-    // )
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        page,
+        prepareRow,
+        setFilter,
+        state: { pageIndex, pageSize },
+        nextPage,
+        previousPage,
+        canPreviousPage,
+        canNextPage,
+    } = tableInstance;
+
+    const handleStatusRow = (id) => {
+        setData(
+          data.map((row) => {
+            if (row.id === id) {
+              return {
+                ...row,
+                status: !row.status
+              };
+            }
+          })
+        );
+      };
+
+    const handleFilterChange = (e, accessor) => {
+        const value = e.target.value;
+        setFilter(accessor, value);
+    };
 
     return (
         <>
+        <Header />
+        <div className={style.maincontainer}>
 
-            <Header />
-            <div className={style.maincontainer}>
+            <div className={style.addsearch}>
+                <button className={style.addbtn}>Agregar</button>
 
-                <div className={style.addsearch}>
-
-                    <button className={style.addbtn}>Agregar</button>
-
-                    <div className={style.filter}>
-                        <IoFilterCircleOutline color="#464646" style={{ fontSize: '1.8rem', marginRight: '10px', cursor:'pointer' }} />
-                        <div className={style.search}>
-
-                            <input type="text" placeholder='Buscar...' />
-                            <AiOutlineSearch />
-                        </div>
-                    </div>
-
+                <div className={style.search}>
+                    {' '}
+                    <input id={style.search} type="text" onChange={(e) => handleFilterChange(e, 'eje')} />
+                    <AiOutlineSearch />
                 </div>
 
-
-
-                <div className="p-4 rounded" id={style.table}>
-                    <Table responsive>
-                        <thead>
-                            <tr>
-                                <th>Organización</th>
-                                <th className={style.h_description}>Descripción</th>
-                                <th>Responsable</th>
-                                <th>Eje</th>
-                                <th>ODS</th>
-                                <th>Fecha de inicio</th>
+            </div>
+            <div className={style.table}>
+                <table {...getTableProps()}>
+                    <thead>
+                        {headerGroups.map((headerGroup) => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map((column) => (
+                                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                ))}
                                 <th>Estado</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Objetivos de Desarrollo Sostenible </td>
-                                <td className={style.description}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia ab atque assumenda sapiente.</td>
-                                <td>Lorem ipsum</td>
-                                <td>Prosperidad</td>
-                                <td> Trabajo Decente y Crecimiento Económico</td>
-                                <td>30/03/2023</td>
-                                <td className={style.status}>
-                                    <IoMdAddCircleOutline style={{ fontSize: '1.7rem', cursor:'pointer' }} />
-                                    <Switch />
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </Table>
-                </div>
+                        ))}
+                    </thead>
+                    <tbody {...getTableBodyProps()}>
+                        {page.map((row) => {
+                            prepareRow(row);
+                            return (
+                                <tr {...row.getRowProps()}>
+                                    {row.cells.map((cell) => {
+                                        return (
+                                            <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                        );
+                                    })}
+                                    <td>
+                                        <button onClick={() => handleStatusRow}>
+                                            <Switch />
+                                        </button>
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </div>
-            <Footer />
+            <div className={style.pages}>
+                <div className={style.pagesbtn}>
+                    <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+                        <IoChevronBackSharp color="grey" />
+                    </button>{' '}
+                    <button onClick={() => nextPage()} disabled={!canNextPage}>
+                        <IoChevronForwardSharp color="grey" />
+                    </button>
+                </div>
+                <span>
+                    Página{' '}
+                    <strong>
+                        {pageIndex + 1} de {Math.ceil(data.length / pageSize)}
+                    </strong>{' '}
+                </span>
+            </div>
+        </div>
+        <Footer />
         </>
     );
 }

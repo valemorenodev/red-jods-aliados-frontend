@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { TbLogout } from "react-icons/tb";
 import ColorBar from "../ColorBar/ColorBar"
 import style from './Header.module.css'
+import logo from '../../assets/images/logo.png'
 
 function Header() {
   return (
@@ -15,7 +16,7 @@ function Header() {
 
         <div className={style.section1}>
           <Navbar.Brand as={Link} to={'/'} className={style.navbrand}> 
-            <img className={style.logo} src="/src/assets/logo.png" alt="LOGO" />
+            <img className={style.logo} src={logo} alt="LOGO" />
           </Navbar.Brand>
           <div className={style.message}>Bienvenido Administrador</div>
         </div>
