@@ -13,28 +13,44 @@ a {
     color: inherit;
 }
 
-.navbars {
+#header{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#main{
     width: 100%;
+    display: flex;
 }
 
 .section1 {
     width: 50%;
     display: flex;
-    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#menu{
+    border-style: none;
+    color: blue;
 }
 
 .section2 {
     width: 50%;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .logo {
-    width: 10rem;
+    width: 8rem;
+
 }
 
-.messages {
-    margin-top: 5%;
+.message {
+    width: 6rem;
     font-weight: bold;
-    font-size: medium;
+    font-size: 12px;
 }
 
 .navbars button {
@@ -66,7 +82,22 @@ a {
 
 .hrs {
     width: 100%;
-    position: absolute;
+}
+
+.colorbar{
+    width: 80%;
+}
+
+.colorbar{
+    width: 80%;
+}
+
+.colorbar{
+    width: 80%;
+}
+
+.colorbar{
+    width: 80%;
 }
 
 @media (min-width: 1440px) {
@@ -108,8 +139,8 @@ a {
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1439px) {
-    .navbars {
+@media (min-width: 1024px) and (max-width: 1930px) {
+    .navbar-s {
         display: flex;
         align-items: center;
         flex-direction: column;
