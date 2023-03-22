@@ -63,7 +63,7 @@
 
     th, tr, td{
       color: var(--color-secondary-five);
-      padding: 0.5rem 0.5rem;
+      padding: 0.5rem 0.5rem !important;
     }
   
     th{
@@ -71,6 +71,11 @@
       font-weight: 600;
       letter-spacing: 1px;
       text-align: left;
+    }
+
+    .tableally{
+      color: var(--color-second-five);
+      background-color: white
     }
   
     tr{
@@ -124,7 +129,7 @@
 
   th, tr, td{
     color: var(--color-secondary-five);
-    padding: 1.32rem 2rem;
+    padding: 1.345rem 2rem !important;
   }
   
   th{

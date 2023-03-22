@@ -60,10 +60,39 @@ const NewEvent = () => {
 
 
                     <label htmlFor="PartnerODS">ODS<span className={style.FormRequired}>*</span></label>
-                    <input className={style.FormInput} name='PartnerODS' type="PartnerODS" {...register("PartnerODS", { required: true, pattern: /^[A-Za-z]+$/i })} />
+                    <select className={style.FormInput} name='PartnerODS' type="PartnerODS" {...register('ods', { required: true })}>
+                        <option placeholder='Selecciona una de las opciones' />
+                        <option value="Pobreza">Fin de la Pobreza</option>
+                        <option value="Hambre">Hambre Cero</option>
+                        <option value="Salud">Salud y Bienestar</option>
+                        <option value="Educación">Educación de Calidad</option>
+                        <option value="Igualdad">Igualdad de Género</option>
+                        <option value="Agua">Agua Limpia y Saneamiento</option>
+                        <option value="Energia">Energía Asequible y no Contaminante</option>
+                        <option value="Trabajo">Trabajo Decenter y Crecimiento Económico</option>
+                        <option value="Industria">Industria, Innovación e Infreestructura</option>
+                        <option value="Desigualdades">Reducción de las desigualdades</option>
+                        <option value="Comunidades">Ciudades y Comunidades Sostenibles</option>
+                        <option value="Produccion">Producción y Consumo Responsables</option>
+                        <option value="Clima">Acción por el Clima</option>
+                        <option value="Submarina">Vida Submarina</option>
+                        <option value="Ecosistemas">Vida de Ecosistemas Terrestres</option>
+                        <option value="Paz">Paz, Justicia e Instituciones Sólidas</option>
+                        <option value="Alianzas">Alianzas para Lograr los Objetivos</option>
+                    </select>
+
+                    <label htmlFor="PartnerODS">EJE<span className={style.FormRequired}>*</span></label>
+                    <select className={style.FormInput} name='PartnerODS' type="PartnerODS" {...register('ods', { required: true })}>
+                        <option placeholder='Selecciona una de las opciones' />
+                        <option value="Personas">Personas</option>
+                        <option value="Prosperidad">Hambre Cero</option>
+                        <option value="Planeta">Salud y Bienestar</option>
+                        <option value="Paz">Educación de Calidad</option>
+                        <option value="Alianzas">Igualdad de Género</option>
+                    </select>
 
                     <Row className={style.FormTitle}>
-                        <Row className={style.FormTitleH}>Contato</Row>
+                        <Row className={style.FormSubtitle}>Contato</Row>
                     </Row>
 
                     <label htmlFor="PartnerPhone">Número<span className={style.FormRequired}>*</span></label>
@@ -72,7 +101,7 @@ const NewEvent = () => {
                     <label htmlFor="PartnerEmail">Email<span className={style.FormRequired}>*</span></label>
                     <input className={style.FormInput} name='PartnerEmail' type="text" {...register("PartnerEmail", { required: true, pattern: /^[A-Za-z]+$/i })} />
 
-                    <label htmlFor="PartnerAddress">Dirección<span className={style.FormRequired}>*</span></label>
+                    <label htmlFor="PartnerAddress">Dirección</label>
                     <input className={style.FormInput} name='PartnerAddress' type="text" {...register("Partner", { required: true, pattern: /^[A-Za-z]+$/i })} />
 
                     <label htmlFor="PartnerTwitter">Twitter (Link)</label>
@@ -100,7 +129,7 @@ const NewEvent = () => {
                     <input className={style.FormInput} name='PartnerDateEnd' type="date"{...register("FinishDate", { required: true })} />
 
                     <Row className={style.FormTitle}>
-                        <Row className={style.FormTitleH}>Arhivos Adjuntos</Row>
+                        <Row className={style.FormTitleH}>Archivos Adjuntos</Row>
                     </Row>
 
                     <label htmlFor="PartnerUrl">Agregar via url</label>

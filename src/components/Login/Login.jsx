@@ -7,10 +7,11 @@ import Swal from 'sweetalert2';
 import axiosInstance from '../../apis/index';
 import { useNavigate } from 'react-router-dom';
 
-const Login = (props) => {
+const Login = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
+  
 
   const submitHandler = async (data) => {
     const { email, pass } = data;
@@ -18,8 +19,12 @@ const Login = (props) => {
     const regexEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
     if (email === '' || pass === '') {
-      alert("Los campos no pueden estar vacíos");
-      return;
+      Swal.fire({
+        icon: 'warning',
+        text: 'Los campos no pueden estar vacios.',
+        background: '#193660',
+        color: '#ffffff',
+      });
     }
 
     if (email !== '' && !regexEmail.test(email)) {
@@ -33,8 +38,12 @@ const Login = (props) => {
     }
 
     if (email === 'email@mail.com' || pass === 'pass') {
-      alert("Credenciales inválidas");
-      return;
+      Swal.fire({
+        icon: 'error',
+        title: 'Usuario Invalido.',
+        background: '#193660',
+        color: '#ffffff',
+      });
     }
     // else {
     //   props.addToken(true);
@@ -43,11 +52,21 @@ const Login = (props) => {
 
     try {
       const response = await axiosInstance.post('/auth/login', { email, pass });
-      navigate('/AlliesList');
+      navigate('/Aliados');
     } catch (error) {
-      alert(error);
+      showErrorAlert(error);;
     }
   };
+
+  function showErrorAlert(error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error al iniciar sesión',
+      text: error.response.data.message,
+      background: '#193660',
+      color: '#ffffff',
+    });
+  }
 
 
 

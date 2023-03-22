@@ -98,9 +98,9 @@ function AlliesList() {
                             {headerGroups.map((headerGroup) => (
                                 <tr {...headerGroup.getHeaderGroupProps()}>
                                     {headerGroup.headers.map((column) => (
-                                        <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                        <th className={style.tableally} {...column.getHeaderProps()}>{column.render('Header')}</th>
                                     ))}
-                                    <th>Estado</th>
+                                    <th className={style.tableally}>Estado</th>
                                 </tr>
                             ))}
                         </thead>

@@ -1,7 +1,8 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import style from './AllyCard.module.css'
-import logo from '../../assets/images/logo.png'
+// import logo from '../../assets/images/logo.png'
+import testimg from '../../assets/images/2030-agenda-sustainable-development-2.png'
 import { TbBrandTwitter } from 'react-icons/tb'
 import { TbBrandInstagram } from 'react-icons/tb'
 import { RiFacebookCircleLine } from 'react-icons/ri'
@@ -9,42 +10,58 @@ import { TbBrandLinkedin } from 'react-icons/tb'
 
 
 function AllyCard() {
+    const cards = [
+        {
+            "id": 1,
+            "number": "345 234 59 48",
+            "email": "email1@gmail.com",
+            "direction": "idk",
+            "twitter": "twitter",
+            "instagram": "instagram",
+            "facebook": "facebook",
+            "linkedin": "linkedin"
+        }
+    ]
+
+
     return (
-        <div className="todo">
+        <div className={style.main}>
             <div id={style.encabezado}>
                 <h1>Nombre del Aliado</h1>
-                <h6>COS del aliado</h6>
-                <button id={style.boton}>Editar</button>
+                <h6>ODS del aliado</h6>
+                <button id={style.btn}>Editar</button>
             </div>
 
 
             <Card id={style.spacecontenedor} style={{ width: '40rem' }}>
                 <div id={style.section1}>
-                    <Card.Img variant="top" src={logo} />
+                    <Card.Img src={testimg} className={style.img} />
                 </div>
 
                 <div id={style.section2}>
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>Contacto</Card.Title>
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
+                            <p className={style.info}>Número: 300 000 00 00</p>
+                            <p className={style.info}>Correo Electronico: email.email.com</p>
+                            <p className={style.info}>Dirección Carrera 3 #3-33</p>
                         </Card.Text>
-                    </Card.Body>
 
-                    <Card.Body id={style.iconos}>
-                        <Card.Link href="#">
-                            <TbBrandTwitter />
-                        </Card.Link>
-                        <Card.Link href="#">
-                            <TbBrandInstagram />
-                        </Card.Link>
-                        <Card.Link href="#">
-                            <RiFacebookCircleLine />
-                        </Card.Link>
-                        <Card.Link href="#">
-                            <TbBrandLinkedin />
-                        </Card.Link>
+                        <Card.Title>Redes Sociales</Card.Title>
+                        <div id={style.iconos}>
+                            <Card.Link href="#">
+                                <TbBrandTwitter size={40}/>
+                            </Card.Link>
+                            <Card.Link href="#">
+                                <TbBrandInstagram size={40}/>
+                            </Card.Link>
+                            <Card.Link href="#">
+                                <RiFacebookCircleLine size={41}/>
+                            </Card.Link>
+                            <Card.Link href="#">
+                                <TbBrandLinkedin size={40}/>
+                            </Card.Link>
+                        </div>
                     </Card.Body>
                 </div>
 

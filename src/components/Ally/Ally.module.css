@@ -22,6 +22,7 @@
 .title h6{
     font-weight:bolder;
     margin-top: 4rem;
+    margin-left: 3rem;
 }
 
 .subtitle{
@@ -103,11 +104,21 @@
 
     .Section1{
         display: flex;
-        flex-direction: column;  
+        flex-direction: column;
 }
 }
   /* STANDARD DESKTOP */
   @media (min-width: 1024px) and (max-width: 1439px) {
+    /* .info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    /* .Section1, .Section2, .Section3 {
+        width: 80%;
+    } */
+
     .sectioncontainer{
         display: flex;
         flex-direction: row;

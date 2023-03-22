@@ -1,14 +1,17 @@
 .containerForm {
     width: 80%;
     margin-top: 2rem;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-tertiary-one);
+    background-color: var(--color-secondary-six);
+    padding: 3rem;
+    border-radius: 1rem;
 }
 
 .formEvent {
-    padding: 1rem;
+    padding: 1rem 10rem;
 }
 
 .formTitle {
@@ -17,13 +20,13 @@
 }
 
 .formTitleH {
-    font-size: larger;
+    font-size: 1.5rem;
     font-weight: bolder;
 }
 
 .formTitleP {
     font-size: medium;
-    font-weight: lighter;
+    font-weight: medium;
 }
 
 .formRequired {
@@ -89,6 +92,10 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+
+    .formEvent {
+        padding: 1rem 5rem;
     }
 
     .formTitleP {

@@ -3,14 +3,16 @@
     min-height: 80vh;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-tertiary-one);
+    background-color: var(--color-secondary-six);
 }
 
 .FormPartner {
-    padding-right: 1rem;
+    padding: 1rem 1rem;
 }
 
 .FormTitle {
@@ -20,7 +22,12 @@
 }
 
 .FormTitleH {
-    font-size: larger;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.FormSubtitle{
+    font-size: 1.5rem;
     font-weight: bolder;
 }
 
@@ -138,6 +145,10 @@ hr {
         align-items: center;
     }
 
+    .FormPartner {
+        padding: 3rem 10rem;
+    }
+
     hr {
         display: none;
     }
@@ -150,6 +161,10 @@ hr {
         align-items: center;
     }
 
+    .FormPartner {
+        padding: 3rem 10rem;
+    }
+
     hr {
         display: none;
     }
@@ -160,6 +175,10 @@ hr {
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+
+    .FormPartner {
+        padding: 1rem 4rem;
     }
 
     hr {
