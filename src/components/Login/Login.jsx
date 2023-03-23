@@ -6,6 +6,7 @@ import style from './Login.module.css'
 import Swal from 'sweetalert2';
 import axiosInstance from '../../apis/index';
 import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
 
 const Login = () => {
 
@@ -52,9 +53,10 @@ const Login = () => {
 
     try {
       const response = await axiosInstance.post('/auth/login', { email, pass });
-      navigate('/Aliados');
+      navigate('/nameroute');
+      console.log('ingreso')
     } catch (error) {
-      showErrorAlert(error);;
+      showErrorAlert(error);
     }
   };
 
@@ -62,13 +64,28 @@ const Login = () => {
     Swal.fire({
       icon: 'error',
       title: 'Error al iniciar sesión',
-      text: error.response.data.message,
       background: '#193660',
       color: '#ffffff',
     });
   }
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //     const fetchData = async () => {
+  //         try {
+  //             const response = await apis.get('/nameroute', {
+  //                 headers: {
+  //                     'Authorization': 'Bearer ' + token
+  //                 }
+  //             });
+  //             setData(response.data);
+  //        } catch (error) {
+  //             console.error(error);
+  //         }
+  //     };
 
+  //     fetchData();
+  // }, []);
 
   return (
     <>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTable, useFilters, usePagination } from 'react-table';
-import testData from '../../TestAliados.json'
+// import testData from '../../TestAliados.json'
 import style from '../AlliesList/AlliesList.module.css'
 import Switch from '../Switch/Switch'
 import { AiOutlineSearch } from "react-icons/ai"
@@ -8,21 +8,23 @@ import { IoChevronBackSharp } from "react-icons/io5"
 import { IoChevronForwardSharp } from "react-icons/io5"
 import { IoMdAddCircleOutline } from "react-icons/io"
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import allies from '../../apis/index'
 
 function AlliesList() {
     const columns = React.useMemo(
         () => [
             {
                 Header: 'Organización',
-                accessor: 'organizacion',
+                accessor: 'organization',
             },
             {
                 Header: 'Descripción',
-                accessor: 'descripcion',
+                accessor: 'description',
             },
             {
                 Header: 'Responsable',
-                accessor: 'responsable',
+                accessor: 'responsible',
             },
             {
                 Header: 'Eje',
@@ -30,17 +32,28 @@ function AlliesList() {
             },
             {
                 Header: 'ODS',
-                accessor: 'ods',
+                accessor: 'ODS',
             },
             {
                 Header: 'Fecha de Inicio',
-                accessor: 'fechainicio',
+                accessor: 'date_start',
             },
         ],
         []
     );
 
-    const [data, setData] = useState(testData);
+    // const [data, setData] = useState(data);
+
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            const { data } = await allies.get("/nameroute")
+            setData(data);
+        }
+
+        fetchData();
+    }, []);
+
 
     const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
 
@@ -92,8 +105,8 @@ function AlliesList() {
                     </div>
 
                 </div>
-                <div className={style.table}>
-                    <table {...getTableProps()}>
+                <div className={style.table1}>
+                    <table className={style.tabla} {...getTableProps()}>
                         <thead>
                             {headerGroups.map((headerGroup) => (
                                 <tr {...headerGroup.getHeaderGroupProps()}>

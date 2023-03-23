@@ -41,7 +41,7 @@
     background: transparent;
   }
   
-  .table{
+  .table1{
       margin: 0 auto;
       background-color: white;
       max-width: 85%;
@@ -52,6 +52,10 @@
       box-shadow: 0px 1px 17px 1px rgba(0, 0, 0, 0.06);
       border-radius: 10px;
       padding: 1rem;
+    }
+
+    .tabla{
+      width: 100%;
     }
 
     ::-webkit-scrollbar {

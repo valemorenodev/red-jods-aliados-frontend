@@ -6,8 +6,25 @@ import style from './NewEvent.module.css'
 const NewEvent = () => {
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data)
 
+
+
+const onSubmit = async (data) => {
+    const formData = new FormData();
+    formData.append("file", data.file[0]);
+    formData.append("organization", data.organization);
+    formData.append("ODS", data.ODS);
+    formData.append("eje", data.eje);
+    formData.append("phone", data.phone);
+    formData.append("email", data.email);
+    try {
+      const response = await axios.post('/api/nameroute', formData);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
     return (
         <Container className={style.containerForm}>
             <Col className={style.formEvent}>
