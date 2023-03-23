@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useTable, useFilters, usePagination } from 'react-table';
-// import testData from '../../TestAliados.json'
 import style from '../AlliesList/AlliesList.module.css'
 import Switch from '../Switch/Switch'
 import { AiOutlineSearch } from "react-icons/ai"
@@ -9,7 +8,7 @@ import { IoChevronForwardSharp } from "react-icons/io5"
 import { IoMdAddCircleOutline } from "react-icons/io"
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import allies from '../../apis/index'
+import apis from '../../apis/index'
 
 function AlliesList() {
     const columns = React.useMemo(
@@ -46,13 +45,23 @@ function AlliesList() {
 
     const [data, setData] = useState([]);
     useEffect(() => {
-        async function fetchData() {
-            const { data } = await allies.get("/nameroute")
-            setData(data);
-        }
+        const token = localStorage.getItem('token');
+          const fetchData = async () => {
+              try {
+                  const response = await apis.get('/nameroute', {
+                      headers: {
+                          'Authorization': 'Bearer ' + token
+                      }
+                  });
+                  setData(response.data);
+             } catch (error) {
+                  console.error(error);
+              }
+          };
+ 
+          fetchData();
+      }, []);
 
-        fetchData();
-    }, []);
 
 
     const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
@@ -73,16 +82,17 @@ function AlliesList() {
 
     const handleStatusRow = (id) => {
         setData(
-            data.map((row) => {
-                if (row.id === id) {
-                    return {
-                        ...row,
-                        status: !row.status
-                    };
-                }
-            })
+          data.map((row) => {
+            if (row.id === id) {
+              return {
+                ...row,
+                status: !row.status
+              };
+            }
+            return row;
+          })
         );
-    };
+      };
 
     const handleFilterChange = (e, accessor) => {
         const value = e.target.value;
@@ -134,7 +144,7 @@ function AlliesList() {
                                                     <IoMdAddCircleOutline size={30} />
                                                 </button>
                                             </Link>
-                                                <button onClick={() => handleStatusRow}>
+                                                <button onClick={() => handleStatusRow(row.id)}>
                                                     <Switch />
                                                 </button>
                                             </div>

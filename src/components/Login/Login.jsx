@@ -51,12 +51,13 @@ const Login = () => {
     //   Navigate('/cripto');
     // }
 
-    try {
+   try {
       const response = await axiosInstance.post('/auth/login', { email, pass });
+      const token = response.data.tokenSession;
+      localStorage.setItem('token', token);
       navigate('/nameroute');
-      console.log('ingreso')
     } catch (error) {
-      showErrorAlert(error);
+      showErrorAlert(error);;
     }
   };
 
@@ -68,24 +69,6 @@ const Login = () => {
       color: '#ffffff',
     });
   }
-
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //     const fetchData = async () => {
-  //         try {
-  //             const response = await apis.get('/nameroute', {
-  //                 headers: {
-  //                     'Authorization': 'Bearer ' + token
-  //                 }
-  //             });
-  //             setData(response.data);
-  //        } catch (error) {
-  //             console.error(error);
-  //         }
-  //     };
-
-  //     fetchData();
-  // }, []);
 
   return (
     <>
