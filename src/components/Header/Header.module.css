@@ -99,7 +99,6 @@ a {
 .colorbar{
     width: 80%;
 }
-
 @media (min-width: 1440px) {
     .navbars {
         display: flex;
