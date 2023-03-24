@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTable, useFilters, usePagination } from 'react-table';
+import { useTable, useGlobalFilter, usePagination } from 'react-table';
 import style from '../AlliesList/AlliesList.module.css'
 import Switch from '../Switch/Switch'
 import { AiOutlineSearch } from "react-icons/ai"
@@ -7,7 +7,6 @@ import { IoChevronBackSharp } from "react-icons/io5"
 import { IoChevronForwardSharp } from "react-icons/io5"
 import { IoMdAddCircleOutline } from "react-icons/io"
 import { Link } from 'react-router-dom';
-import axios from "axios";
 import apis from '../../apis/index'
 
 function AlliesList() {
@@ -41,8 +40,6 @@ function AlliesList() {
         []
     );
 
-    // const [data, setData] = useState(data);
-
     const [data, setData] = useState([]);
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -62,17 +59,20 @@ function AlliesList() {
           fetchData();
       }, []);
 
+      const viewAlly = async (id, item) => {
+        await apis.get(`/nameroute/${id}`, item);
+      }
 
-
-    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
+    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useGlobalFilter, usePagination);
 
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         page,
+        state,
+        setGlobalFilter,
         prepareRow,
-        setFilter,
         state: { pageIndex, pageSize },
         nextPage,
         previousPage,
@@ -94,10 +94,7 @@ function AlliesList() {
         );
       };
 
-    const handleFilterChange = (e, accessor) => {
-        const value = e.target.value;
-        setFilter(accessor, value);
-    };
+    const { globalFilter } = state;
 
     return (
         <>
@@ -110,7 +107,7 @@ function AlliesList() {
 
                     <div className={style.search}>
                         {' '}
-                        <input id={style.search} type="text" onChange={(e) => handleFilterChange(e, 'eje')} />
+                        <input id={style.search} type="text" onChange={(e) => setGlobalFilter(e.target.value)} />
                         <AiOutlineSearch />
                     </div>
 

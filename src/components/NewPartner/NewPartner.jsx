@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
-import { IoEyeSharp } from "react-icons/io5";
-import { IoAttach } from "react-icons/io5";
-import { FaTrash } from 'react-icons/fa';
+//import { IoEyeSharp } from "react-icons/io5";
+//import { IoAttach } from "react-icons/io5";
+//import { FaTrash } from 'react-icons/fa';
 import { Container, Row, Col } from 'react-bootstrap';
 import style from './NewPartner.module.css'
 import apis from '../../apis/index'
@@ -124,6 +124,16 @@ return (
                     <option value="Alianzas">Alianzas</option>
                 </select>
                 {errors.eje?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
+
+                <label id='title-form' >Responsable<span className={style.FormRequired}>*</span></label>
+                <input
+                    placeholder='Diligencia tu respuesta'
+                    className={style.FormInput}
+                    type="text"
+                    {...register('responsible', {
+                        required: true,
+                    })} />
+                {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
                 <Row className={style.FormTitle}>
                     <Row className={style.FormSubtitle}>Contato</Row>

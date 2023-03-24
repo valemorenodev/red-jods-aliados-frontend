@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Container, Row, Col } from 'react-bootstrap';
 import style from '../NewEvent/NewEvent.module.css'
+import apis from '../../apis/index'
 
 const NewEvent = () => {
 
@@ -10,7 +11,7 @@ const NewEvent = () => {
     const onSubmit = async (data) => {
         const token = localStorage.getItem('token');
         try {
-            const res = await apis.post('/nameroute', data, {
+            const res = await apis.post('/activityhroutes', data, {
                 headers: {
                     'Authorization': 'Bearer ' + token
                 }
@@ -38,7 +39,7 @@ const NewEvent = () => {
                         id='input-form'
                         className={style.FormInput}
                         type="date"
-                        {...register("EventDate", {
+                        {...register("date", {
                             required: true
                         })} />
                     {errors.date?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
@@ -48,7 +49,7 @@ const NewEvent = () => {
                         placeholder='Diligencia tu respuesta'
                         className={style.FormInput}
                         type="text"
-                        {...register('EventType', {
+                        {...register('type_activity', {
                             required: true,
                             pattern: /^[A-Za-z]+$/i,
                         })} />
@@ -59,7 +60,7 @@ const NewEvent = () => {
                         placeholder='Diligencia tu respuesta'
                         className={style.FormInput}
                         type="text"
-                        {...register('EventName', {
+                        {...register('name', {
                             required: true,
                             pattern: /^[A-Za-z]+$/i,
                         })} />
@@ -70,7 +71,7 @@ const NewEvent = () => {
                         placeholder='Diligencia tu respuesta'
                         className={style.FormInput}
                         type="text"
-                        {...register('EventOrganizer', {
+                        {...register('organizer', {
                             required: true,
                             pattern: /^[A-Za-z]+$/i,
                         })} />
@@ -82,7 +83,7 @@ const NewEvent = () => {
                         placeholder='Diligencia tu respuesta'
                         className={style.FormInput}
                         type="textarea"
-                        {...register('objetives', {
+                        {...register('description', {
                             required: true,
                         })} />
                     {errors.objetive?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}

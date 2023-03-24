@@ -1,15 +1,16 @@
-import React, { useState, useMemo } from 'react';
-import { useTable, useFilters, usePagination } from 'react-table';
-import testData from '../../testEventos.json'
+import React, { useState, useMemo, useEffect } from 'react';
+import { useTable,  usePagination, useGlobalFilter } from 'react-table';
+//import testData from '../../testEventos.json'
 import style from '../EventTable/EventTable.module.css'
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoChevronBackSharp } from "react-icons/io5"
 import { IoChevronForwardSharp } from "react-icons/io5"
 import { Link } from 'react-router-dom';
 import Barv2 from '../ColorBar v2/ColorBar';
+import apis from '../../apis/index'
 
 function EventTable() {
-    const columns = React.useMemo(
+    const columns = useMemo(
         () => [
             {
                 Header: 'Fecha',
@@ -17,7 +18,7 @@ function EventTable() {
             },
             {
                 Header: 'Tipo de Actividad',
-                accessor: 'type',
+                accessor: 'type_activity',
             },
             {
                 Header: 'Nombre',
@@ -25,7 +26,7 @@ function EventTable() {
             },
             {
                 Header: 'Organizador',
-                accessor: 'planer',
+                accessor: 'organizer',
             },
             {
                 Header: 'Decripción',
@@ -35,17 +36,35 @@ function EventTable() {
         []
     );
 
-    const [data, setData] = useState(testData);
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+          const fetchData = async () => {
+              try {
+                  const response = await apis.get('/activityhroutes', {
+                      headers: {
+                          'Authorization': 'Bearer ' + token
+                      }
+                  });
+                  setData(response.data);
+             } catch (error) {
+                  console.error(error);
+              }
+          };
+ 
+          fetchData();
+      }, []);
 
-    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
+    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useGlobalFilter, usePagination );
 
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         page,
+        state,
+        setGlobalFilter,
         prepareRow,
-        setFilter,
         state: { pageIndex, pageSize },
         nextPage,
         previousPage,
@@ -53,23 +72,7 @@ function EventTable() {
         canNextPage,
     } = tableInstance;
 
-    const handleStatusRow = (id) => {
-        setData(
-            data.map((row) => {
-                if (row.id === id) {
-                    return {
-                        ...row,
-                        status: !row.status
-                    };
-                }
-            })
-        );
-    };
-
-    const handleFilterChange = (e, accessor) => {
-        const value = e.target.value;
-        setFilter(accessor, value);
-    };
+    const { globalFilter } = state;
 
     return (
         <>
@@ -86,7 +89,7 @@ function EventTable() {
 
                     <div className={style.search}>
                         {' '}
-                        <input id={style.search} type="text" onChange={(e) => handleFilterChange(e, 'eje')} />
+                        <input id={style.search} type="text" onChange={(e) => setGlobalFilter(e.target.value)} />
                         <AiOutlineSearch />
                     </div>
 

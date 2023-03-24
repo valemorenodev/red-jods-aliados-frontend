@@ -12,16 +12,16 @@ const RouterApp = () => {
     return (
         <Routes>
             <Route path='/' element={<Login />} />
-            {/* <Route
+             <Route
                 path='nameroute'
                 element={
-                    <PrivateRoute>
+
                         <AlliesList />
-                    </PrivateRoute>
+
                 }
-            /> */}
-            <Route
-                path='Aliado'
+            />
+            {/* <Route
+                path='Ally'
                 element={
                     <PrivateRoute>
                         <Ally />
@@ -29,7 +29,7 @@ const RouterApp = () => {
                 }
             />
             <Route
-                path='Nuevo'
+                path='NewAlly'
                 element={
                     <PrivateRoute>
                         <NewAlly />
@@ -37,18 +37,18 @@ const RouterApp = () => {
                 }
             />
             <Route
-                path='NuevoEvento'
+                path='NewEvent'
                 element={
                     <PrivateRoute>
                         <NewEvent />
                     </PrivateRoute>
                 }
-            />
+            /> */}
             <Route path="*" element={<Error404 />} />
             <Route path='/nameroute' element={<AlliesList />} />
             <Route path='/NewAlly' element={<NewAlly />} />
             <Route path='/Ally' element={<Ally />} />
-            <Route path='/NewEvent' element={<NewEvent />} /> 
+            <Route path='/NewEvent' element={<NewEvent />} />
         </Routes>
     )
 }

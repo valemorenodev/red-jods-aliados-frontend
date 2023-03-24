@@ -10,6 +10,11 @@ import { TbBrandLinkedin } from 'react-icons/tb'
 
 
 function AllyCard() {
+
+    // if (!data){
+    //     return null;
+    // }
+
     const cards = [
         {
             "id": 1,
@@ -22,7 +27,6 @@ function AllyCard() {
             "linkedin": "linkedin"
         }
     ]
-
 
     return (
         <div className={style.main}>

@@ -7,6 +7,8 @@ import EventTable from '../EventTable/EventTable'
 import AllyCard from './AllyCard'
 
 function Ally() {
+
+    
     return (
         <>
             <div className={style.container}>
@@ -46,9 +48,9 @@ function Ally() {
                             </section>
 
                             <div className={style.indicators}>
-                                <div> <p className={style.subtitle}>Fecha de inicio</p><p className={style.date}>23/03/2023</p></div>
-                                <div> <p className={style.subtitle}>Fecha de Finalización</p><p className={style.date}>23/03/2023</p></div>
-                                <div> <p className={style.subtitle}>Fecha de Modificación</p><p className={style.date}>23/03/2023</p></div>
+                                <div> <h4 className={style.subtitle}>Fecha de inicio</h4><p className={style.date}>23/03/2023</p></div>
+                                <div> <h4 className={style.subtitle}>Fecha de Finalización</h4><p className={style.date}>23/03/2023</p></div>
+                                <div> <h4 className={style.subtitle}>Fecha de Modificación</h4><p className={style.date}>23/03/2023</p></div>
                             </div>
                         </section>
                     </section>
