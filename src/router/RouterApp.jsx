@@ -7,6 +7,8 @@ import Ally from '../Views/Ally'
 import NewEvent from '../Views/NewEvent'
 import Error404 from '../Views/Page404'
 import { PrivateRoute } from './PrivateRoute'
+import UserList from '../Views/UserList'
+
 
 const RouterApp = () => {
     return (
@@ -48,7 +50,8 @@ const RouterApp = () => {
             <Route path='/nameroute' element={<AlliesList />} />
             <Route path='/NewAlly' element={<NewAlly />} />
             <Route path='/Ally' element={<Ally />} />
-            <Route path='/NewEvent' element={<NewEvent />} /> 
+            <Route path='/NewEvent' element={<NewEvent />} />
+            <Route path='/Usuarios' element={<UserList />} />
         </Routes>
     )
 }

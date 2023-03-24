@@ -15,7 +15,7 @@ function Header() {
       <Container id={style.main}>
 
         <div className={style.section1}>
-          <Navbar.Brand as={Link} to={'/'} className={style.navbrand}> 
+          <Navbar.Brand as={Link} to={'/'} className={style.navbrand}>
             <img className={style.logo} src={logo} alt="LOGO" />
           </Navbar.Brand>
           <div className={style.message}>Bienvenido Administrador</div>
@@ -26,12 +26,13 @@ function Header() {
         <Navbar.Collapse className={style.section2} id="basic-navbar-nav">
           <Nav className='navbar-items-s'>
             <div className="text">
-              <Nav.Link as={Link} to={'/'}>Inicio
-              </Nav.Link>
+              <Nav.Link as={Link} to={'/'}>Aliados</Nav.Link>
             </div>
-            <div className="text">
-              <Nav.Link as={Link} to={'/Usuario'}>Usuario
-              </Nav.Link>
+            <div className={style.text}>
+              <Nav.Link as={Link} to={'/Eventos'}>Eventos</Nav.Link>
+            </div>
+            <div className={style.text}>
+              <Nav.Link as={Link} to={'/Usuarios'}>Usuarios</Nav.Link>
             </div>
             <div className='text'>
               <Nav.Link as={Link} to={'/Cerrar'}> <span className='icon-s'><TbLogout /></span><label className='label-s'>Cerrar Sesión</label>
