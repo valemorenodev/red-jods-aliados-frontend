@@ -65,15 +65,34 @@ hr {
 }
 
 .FileTable {
+    width: 70%;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: small;
     text-align: left;
     padding: 1rem;
 }
 
+.filename{
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+}
+
 .OptionIcon {
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.FileIcon,
+.filename,
+.OptionIcon{
+    padding: 0.5rem !important;
 }
 
 .FileIcon,

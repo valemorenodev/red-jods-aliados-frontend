@@ -1,6 +1,6 @@
 *{
   transition: all 0.6s ease;
-  font-family: Poppins;
+  font-family: var(--font);
 }
 
 
@@ -83,7 +83,7 @@
     }
   
     tr{
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font);
       font-size: 12px;
       text-align: left;
       margin-bottom: 3rem;

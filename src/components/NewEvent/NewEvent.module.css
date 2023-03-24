@@ -14,7 +14,7 @@
     padding: 1rem 10rem;
 }
 
-.formTitle {
+.FormTitle {
     margin-left: 1rem;
     color: var(--color-tertiary-three);
 }
@@ -29,13 +29,13 @@
     font-weight: medium;
 }
 
-.formRequired {
+.FormRequired {
     font-size: larger;
     font-weight: bolder;
     color: var(--color-secondary-three);
 }
 
-.formEvent label {
+.FormEvent label {
     margin-left: 0.5rem;
     margin-top: 0.5rem;
     font-size: medium;
@@ -43,7 +43,7 @@
     color: var(--color-tertiary-three);
 }
 
-.formInput {
+.FormInput {
     width: 100%;
     margin: 0.5rem;
     padding: 0.5rem;

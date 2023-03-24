@@ -82,7 +82,7 @@ th {
 }
 
 tr {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font);
   font-size: 12px;
   text-align: left;
   margin-bottom: 3rem;

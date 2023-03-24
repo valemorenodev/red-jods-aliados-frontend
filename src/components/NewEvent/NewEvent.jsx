@@ -1,30 +1,27 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Container, Row, Col } from 'react-bootstrap';
-import style from './NewEvent.module.css'
+import style from '../NewEvent/NewEvent.module.css'
 
 const NewEvent = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-
-
-const onSubmit = async (data) => {
-    const formData = new FormData();
-    formData.append("file", data.file[0]);
-    formData.append("organization", data.organization);
-    formData.append("ODS", data.ODS);
-    formData.append("eje", data.eje);
-    formData.append("phone", data.phone);
-    formData.append("email", data.email);
-    try {
-      const response = await axios.post('/api/nameroute', formData);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
+    const onSubmit = async (data) => {
+        const token = localStorage.getItem('token');
+        try {
+            const res = await apis.post('/nameroute', data, {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            console.log(res.data);
+        } catch (error) {
+            console.error(error, 'hola');
+        }
     }
-  };
-  
+
+
     return (
         <Container className={style.containerForm}>
             <Col className={style.formEvent}>
@@ -35,20 +32,60 @@ const onSubmit = async (data) => {
                         <Row className={style.formTitleP}>(*) Campos obligatorios</Row>
                     </Col>
 
-                    <label htmlFor="EventDate">Fecha del Evento<span className={style.formRequired}>*</span></label>
-                    <input className={style.formInput} name="EventDate" type="date"{...register("EventDate", { required: true })} />
 
-                    <label htmlFor="EventType">Tipo de la Actividad<span className={style.formRequired}>*</span></label>
-                    <input className={style.formInput} name='EventType' type="text" {...register("EventType", { required: true, pattern: /^[A-Za-z]+$/i })} />
+                    <label id='title-form'>Fecha del Evento<span className={style.FormRequired}>*</span></label>
+                    <input
+                        id='input-form'
+                        className={style.FormInput}
+                        type="date"
+                        {...register("EventDate", {
+                            required: true
+                        })} />
+                    {errors.date?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
-                    <label htmlFor="EventName">Nombre de la Actividad<span className={style.formRequired}>*</span></label>
-                    <input className={style.formInput} name='EventName' type="text" {...register("EventName", { required: true, pattern: /^[A-Za-z]+$/i })} />
+                    <label id='title-form' >Tipo de Actividad<span className={style.FormRequired}>*</span></label>
+                    <input
+                        placeholder='Diligencia tu respuesta'
+                        className={style.FormInput}
+                        type="text"
+                        {...register('EventType', {
+                            required: true,
+                            pattern: /^[A-Za-z]+$/i,
+                        })} />
+                    {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
-                    <label htmlFor="EventPartner">Organizador<span className={style.formRequired}>*</span></label>
-                    <input className={style.formInput} name='EventPartner' type="text" {...register("EventPartner", { required: true, pattern: /^[A-Za-z]+$/i })} />
+                    <label id='title-form' >Nombre de la Actividad<span className={style.FormRequired}>*</span></label>
+                    <input
+                        placeholder='Diligencia tu respuesta'
+                        className={style.FormInput}
+                        type="text"
+                        {...register('EventName', {
+                            required: true,
+                            pattern: /^[A-Za-z]+$/i,
+                        })} />
+                    {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
-                    <label htmlFor="EventDescription">Descripción<span className={style.formRequired}>*</span></label>
-                    <input className={style.formInput} name='EventDescription' type="text" {...register("EventDescription", { required: true, pattern: /^[A-Za-z]+$/i })} />
+                    <label id='title-form'>Organizador<span className={style.FormRequired}>*</span></label>
+                    <input
+                        placeholder='Diligencia tu respuesta'
+                        className={style.FormInput}
+                        type="text"
+                        {...register('EventOrganizer', {
+                            required: true,
+                            pattern: /^[A-Za-z]+$/i,
+                        })} />
+                    {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
+
+                    <label id='title-form'>Descripción<span className={style.FormRequired}>*</span></label>
+                    <textarea
+                        id='input-form-des'
+                        placeholder='Diligencia tu respuesta'
+                        className={style.FormInput}
+                        type="textarea"
+                        {...register('objetives', {
+                            required: true,
+                        })} />
+                    {errors.objetive?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
                     <input className={style.formButton} type="submit" value="Crear" />
                 </form>
