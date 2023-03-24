@@ -55,19 +55,30 @@ const Login = () => {
       const response = await axiosInstance.post('/auth/login', { email, pass });
       const token = response.data.tokenSession;
       localStorage.setItem('token', token);
+      //showsucces('hola')
       navigate('/nameroute');
     } catch (error) {
-      showErrorAlert(error);;
+      showErrorAlert('Usuario bloqueado revisa tu correo');
     }
   };
 
-  function showErrorAlert(error) {
+  function showErrorAlert(errorMessage) {
     Swal.fire({
       icon: 'error',
       title: 'Error al iniciar sesión',
+      text: errorMessage,
       background: '#193660',
       color: '#ffffff',
     });
+    function showsucces(Message) {
+      Swal({
+        icon: 'success',
+        title: 'Sesion correcta',
+        text: Message,
+        background: '#193660',
+        color: '#ffffff',
+      });
+    }
   }
 
   return (
