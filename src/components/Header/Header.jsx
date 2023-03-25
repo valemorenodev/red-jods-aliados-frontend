@@ -14,12 +14,14 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [data, setData] = useState([]);
+  
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/');
   }
+  
   useEffect(() => {
     const showErrorAlert = (errorMessage) => {
       Swal.fire({
@@ -61,7 +63,7 @@ function Header() {
       <Container id={style.main}>
 
         <div className={style.section1}>
-          <Navbar.Brand as={Link} to={'/'} className={style.navbrand}>
+          <Navbar.Brand as={Link} to={'/nameroute'} className={style.navbrand}>
             <img className={style.logo} src={logo} alt="LOGO" />
           </Navbar.Brand>
           <div className={style.message}>Bienvenido {data.role} {data.name}</div>

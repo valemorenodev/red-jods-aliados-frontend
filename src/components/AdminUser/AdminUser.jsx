@@ -4,15 +4,20 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoChevronBackSharp } from "react-icons/io5"
 import { IoChevronForwardSharp } from "react-icons/io5"
-import { IoMdAddCircleOutline } from "react-icons/io"
 import style from '../AdminUser/AdminUser.module.css'
 import Switch from '../Switch/Switch'
-import axios from "axios";
 import apis from '../../apis/index'
+import jwt_decode from 'jwt-decode';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function AdminUser() {
     const [showModal, setShowModal] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
+    const navigate = useNavigate();
+
 
     const columns = React.useMemo(
         () => [
@@ -37,32 +42,52 @@ function AdminUser() {
     );
 
     const [data, setData] = useState([]);
-    useEffect(() => {
+        useEffect(() => {
         const token = localStorage.getItem('token');
-        const fetchData = async () => {
-            try {
-                const response = await apis.get('/userroute', {
-                    headers: {
-                        'Authorization': 'Bearer ' + token
-                    }
-                });
-                setData(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+        const tokendecode = jwt_decode(token);
+        const user = tokendecode.role;
+        const showErrorAlert = (errorMessage) => {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: errorMessage,
+              confirmButtonColor: '#ff6565',
+            });
+          };
+        
+        if (user === 'user') {
+            showErrorAlert('Solos los administradores pueden editar usuarios');
+            navigate('/nameroute');
+        }else{
+            const fetchData = async () => {
+                try {
+                    const response = await apis.get('/userroute', {
+                        headers: {
+                            'Authorization': 'Bearer ' + token
+                        }
+                    });
+                    setData(response.data);
+                } catch (error) {
+                    console.error(error);
+                }
+            };
+            fetchData();
+        }
 
-        fetchData();
+
+       
     }, []);
 
     const createUser = async () => {
         try {
-            const response = await axios.post('/', formData);
-            console.log(response.data);
+          const response = await apis.post('auth/register', formData);
+          console.log(response.data);
+          closeModal();
+          fetchData();
         } catch (error) {
-            console.error(error);
+          console.error(error);
         }
-    };
+      };
 
     const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
 
