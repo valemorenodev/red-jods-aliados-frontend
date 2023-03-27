@@ -7,7 +7,6 @@ import Ally from '../Views/Ally'
 import NewEvent from '../Views/NewEvent'
 import Error404 from '../Views/Page404'
 import UserList from '../Views/UserList'
-import Documentation from '../documentation/Documentation'
 
 
 const RouterApp = () => {
@@ -20,8 +19,6 @@ const RouterApp = () => {
             <Route path='/nameroute/:id' element={<Ally />} />
             <Route path='/NewEvent' element={<NewEvent />} />
             <Route path='/Usuarios' element={<UserList />} />
-            <Route path='/Doc' element={<Documentation/>} />
-
         </Routes>
     )
 }
