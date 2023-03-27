@@ -9,7 +9,9 @@ import { RiFacebookCircleLine } from 'react-icons/ri'
 import { TbBrandLinkedin } from 'react-icons/tb'
 
 
-function AllyCard() {
+function AllyCard(props) {
+
+    const { data } = props;
 
     // if (!data){
     //     return null;
@@ -31,8 +33,9 @@ function AllyCard() {
     return (
         <div className={style.main}>
             <div id={style.encabezado}>
-                <h1>Nombre del Aliado</h1>
+                <h1>{data.organization ? data.organization : 'Nombre no disponible'}</h1>
                 <h6>ODS del aliado</h6>
+                <h6>EJE</h6>
                 <button id={style.btn}>Editar</button>
             </div>
 
@@ -46,24 +49,26 @@ function AllyCard() {
                     <Card.Body>
                         <Card.Title>Contacto</Card.Title>
                         <Card.Text>
-                            <p className={style.info}>Número: 300 000 00 00</p>
-                            <p className={style.info}>Correo Electronico: email.email.com</p>
-                            <p className={style.info}>Dirección Carrera 3 #3-33</p>
+                            <div>
+                                <h6 className={style.info}>Número: {data.number ? data.number : 'No disponible.'}</h6>
+                                <h6 className={style.info}>Correo Electronico: {data.email ? data.email : 'No disponible.'}</h6>
+                                <h6 className={style.info}>Dirección: {data.address ? data.address : 'No disponible.'}</h6>
+                            </div>
                         </Card.Text>
 
                         <Card.Title>Redes Sociales</Card.Title>
                         <div id={style.iconos}>
-                            <Card.Link href="#">
-                                <TbBrandTwitter size={40}/>
+                            <Card.Link href={data.twitter}>
+                                <TbBrandTwitter size={40} />
                             </Card.Link>
-                            <Card.Link href="#">
-                                <TbBrandInstagram size={40}/>
+                            <Card.Link href={data.ig}>
+                                <TbBrandInstagram size={40} />
                             </Card.Link>
-                            <Card.Link href="#">
-                                <RiFacebookCircleLine size={41}/>
+                            <Card.Link href={data.fb}>
+                                <RiFacebookCircleLine size={41} />
                             </Card.Link>
-                            <Card.Link href="#">
-                                <TbBrandLinkedin size={40}/>
+                            <Card.Link href={data.linkedin}>
+                                <TbBrandLinkedin size={40} />
                             </Card.Link>
                         </div>
                     </Card.Body>

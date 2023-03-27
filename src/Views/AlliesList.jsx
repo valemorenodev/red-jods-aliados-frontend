@@ -5,13 +5,13 @@ import Footer from '../components/Footer/Footer'
 
 const NewParther = () => {
   return (
-    <div>
+    <>
       <Header />
-        <div>
-          <AlliesList />
-        </div>
+      <div>
+        <AlliesList />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -14,14 +14,14 @@ import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [data, setData] = useState([]);
-  
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/');
   }
-  
+
   useEffect(() => {
     const showErrorAlert = (errorMessage) => {
       Swal.fire({
@@ -31,7 +31,7 @@ function Header() {
         confirmButtonColor: '#ff6565',
       });
     };
-  
+
     const token = localStorage.getItem('token');
     if (token === null) {
       showErrorAlert('Debe iniciar sesion para acceder a esta pagina');
@@ -39,7 +39,7 @@ function Header() {
     } else {
       const tokendecode = jwt_decode(token);
       const user = tokendecode._id;
-  
+
       const fetchData = async () => {
         try {
           const response = await apis.get(`/userroute/${user}`, {
@@ -52,14 +52,13 @@ function Header() {
           showErrorAlert(error.message);
         }
       };
-  
+
       fetchData();
     }
-  }, []);  
+  }, []);
 
   return (
     <Navbar className="navbar-s" expand="md" id={style.header}>
-
       <Container id={style.main}>
 
         <div className={style.section1}>
@@ -69,6 +68,7 @@ function Header() {
           <div className={style.message}>Bienvenido {data.role} {data.name}</div>
         </div>
 
+        <Navbar.Toggle aria-controls="basic-navbar-nav" id={style.menu} />
         <Navbar.Toggle aria-controls="basic-navbar-nav" id={style.menu} />
 
         <Navbar.Collapse className={style.section2} id="basic-navbar-nav">
@@ -81,9 +81,9 @@ function Header() {
               <Nav.Link as={Link} to={'/Usuarios'}>Usuarios</Nav.Link>
             </div>
             <div className="text" onClick={handleLogout}>
-            <Nav.Link as={Link}> 
-            <span className='icon-s'><TbLogout />Cerrar Sesión</span>
-            </Nav.Link>
+              <Nav.Link as={Link}>
+                <span className='icon-s'><TbLogout />Cerrar Sesión</span>
+              </Nav.Link>
             </div>
           </Nav>
         </Navbar.Collapse>
@@ -91,7 +91,7 @@ function Header() {
       <div className={style.colorbar}>
         <ColorBar />
       </div>
-    </Navbar>
+    </Navbar >
   );
 }
 

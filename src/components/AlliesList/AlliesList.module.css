@@ -3,7 +3,6 @@
   font-family: var(--font);
 }
 
-
 .maincontainer{
     max-width: 100%;
   }
@@ -57,11 +56,6 @@
     .tabla{
       width: 100%;
     }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  
 
    /* ally */
 
@@ -122,6 +116,10 @@
     
 /* BIG DESKTOP */
 @media (min-width: 1440px) {
+  .maincontainer{
+    margin: 3.9rem;
+  }
+
   .search{
     width: 15rem;
   }
@@ -137,11 +135,11 @@
   }
   
   th{
-    font-size: 18px;
+    font-size: 18px !important;
   }
 
   tr{
-    font-size: 14px;
+    font-size: 16px !important;
   }
 }
 /* STANDARD DESKTOP */

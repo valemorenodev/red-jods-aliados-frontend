@@ -100,7 +100,7 @@ function EventTable() {
                             {headerGroups.map((headerGroup) => (
                                 <tr {...headerGroup.getHeaderGroupProps()}>
                                     {headerGroup.headers.map((column) => (
-                                        <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                        <th className={style.headlines} {...column.getHeaderProps()}>{column.render('Header')}</th>
                                     ))}
                                 </tr>
                             ))}
@@ -109,7 +109,7 @@ function EventTable() {
                             {page.map((row) => {
                                 prepareRow(row);
                                 return (
-                                    <tr {...row.getRowProps()}>
+                                    <tr className={style.rows} {...row.getRowProps()}>
                                         {row.cells.map((cell) => {
                                             return (
                                                 <td {...cell.getCellProps()}>{cell.render('Cell')}</td>

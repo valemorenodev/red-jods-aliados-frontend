@@ -5,19 +5,19 @@ import { AiOutlineSearch } from "react-icons/ai"
 import { IoChevronBackSharp } from "react-icons/io5"
 import { IoChevronForwardSharp } from "react-icons/io5"
 import style from '../AdminUser/AdminUser.module.css'
-import Switch from '../Switch/Switch'
 import apis from '../../apis/index'
 import jwt_decode from 'jwt-decode';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-
-
+import { FaTrash } from 'react-icons/fa';
 
 function AdminUser() {
     const [showModal, setShowModal] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
+    const [deletedUser, setDeletedUser] = useState(null);
     const navigate = useNavigate();
 
+    const [user, setUser] = useState(null);
 
     const columns = React.useMemo(
         () => [
@@ -46,6 +46,7 @@ function AdminUser() {
         const token = localStorage.getItem('token');
         const tokendecode = jwt_decode(token);
         const user = tokendecode.role;
+        setUser(user);
         const showErrorAlert = (errorMessage) => {
             Swal.fire({
               icon: 'error',
@@ -105,20 +106,6 @@ function AdminUser() {
         canNextPage,
     } = tableInstance;
 
-    const handleStatusRow = (id) => {
-        setData(
-            data.map((row) => {
-                if (row.id === id) {
-                    return {
-                        ...row,
-                        status: !row.status
-                    };
-                }
-                return row;
-            })
-        );
-    };
-
     const handleFilterChange = (e, accessor) => {
         const value = e.target.value;
         setFilter(accessor, value);
@@ -148,6 +135,18 @@ function AdminUser() {
 
     const saveUser = (user) => {
         closeModal();
+    };
+
+    const removeUser = async (id) => {
+        if (user === "user") {
+            showErrorAlert("Solo los administradores pueden eliminar usuarios");
+            return;
+        }
+    
+        await apis.delete(`/userroute/${id}`);
+        setDeletedUser((oldList) => {
+            return oldList.filter((item) => item._id !== id);
+        });
     };
 
     return (
@@ -246,7 +245,7 @@ function AdminUser() {
                                     {headerGroup.headers.map((column) => (
                                         <th className={style.tableally} {...column.getHeaderProps()}>{column.render('Header')}</th>
                                     ))}
-                                    <th className={style.tableally}>Estado</th>
+                                    <th className={style.tableally}>Accion</th>
                                 </tr>
                             ))}
                         </thead>
@@ -262,8 +261,8 @@ function AdminUser() {
                                         })}
                                         <td>
                                             <div className={style.plus}>
-                                                <button onClick={() => handleStatusRow(row.id)}>
-                                                    <Switch />
+                                                <button onClick={removeUser(user._id)}>
+                                                    <FaTrash size={25}/>
                                                 </button>
                                             </div>
 

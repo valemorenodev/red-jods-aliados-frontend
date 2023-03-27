@@ -6,7 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai"
 import { IoChevronBackSharp } from "react-icons/io5"
 import { IoChevronForwardSharp } from "react-icons/io5"
 import { IoMdAddCircleOutline } from "react-icons/io"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import apis from '../../apis/index'
 
 function AlliesList() {
@@ -41,6 +41,10 @@ function AlliesList() {
     );
 
     const [data, setData] = useState([]);
+    const [allydetails, setAllyDetails] = useState(null);
+    const navigate = useNavigate();
+
+
     useEffect(() => {
         const token = localStorage.getItem('token');
           const fetchData = async () => {
@@ -59,9 +63,15 @@ function AlliesList() {
           fetchData();
       }, []);
 
-      const viewAlly = async (id, item) => {
-        await apis.get(`/nameroute/${id}`, item);
-      }
+      const viewAlly = async (id) => {
+        try {
+          const response = await apis.get(`/nameroute/${id}`);
+          setAllyDetails(response.data);
+          navigate(`/nameroute/${id}`);
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
     const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useGlobalFilter, usePagination);
 
@@ -83,7 +93,7 @@ function AlliesList() {
     const handleStatusRow = (id) => {
         setData(
           data.map((row) => {
-            if (row.id === id) {
+            if (row._id === id) {
               return {
                 ...row,
                 status: !row.status
@@ -128,7 +138,7 @@ function AlliesList() {
                             {page.map((row) => {
                                 prepareRow(row);
                                 return (
-                                    <tr {...row.getRowProps()}>
+                                    <tr {...row.getRowProps()} allyDetails>
                                         {row.cells.map((cell) => {
                                             return (
                                                 <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
@@ -136,11 +146,11 @@ function AlliesList() {
                                         })}
                                         <td>
                                             <div className={style.plus}>
-                                            <Link to="/Ally">
+                                            <Link to={`/nameroute/${row.original._id}`}> 
                                                 <button>
-                                                    <IoMdAddCircleOutline size={30} />
+                                                    <IoMdAddCircleOutline size={30}/>
                                                 </button>
-                                            </Link>
+                                            </Link> 
                                                 <button onClick={() => handleStatusRow(row.id)}>
                                                     <Switch />
                                                 </button>

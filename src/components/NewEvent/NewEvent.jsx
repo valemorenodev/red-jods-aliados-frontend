@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Container, Row, Col } from 'react-bootstrap';
 import style from '../NewEvent/NewEvent.module.css'
 import apis from '../../apis/index'
+import Swal from 'sweetalert2';
 
 const NewEvent = () => {
 
@@ -16,12 +17,22 @@ const NewEvent = () => {
                     'Authorization': 'Bearer ' + token
                 }
             });
-            console.log(res.data);
+            confirmation(res.data);
         } catch (error) {
             console.error(error, 'hola');
         }
     }
 
+    function confirmation() {
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: 'La información se ha enviado correctamente.',
+            confirmButtonText: 'Aceptar',
+            background: '#193660',
+            color: '#ffffff'
+        });
+}
 
     return (
         <Container className={style.containerForm}>

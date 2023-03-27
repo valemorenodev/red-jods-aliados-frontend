@@ -73,7 +73,7 @@ input#inputlog{
     width: 33rem;
     z-index: 2;
     position:absolute;
-    left: 870px;
+    left: 800px;
     transform: rotate(-5deg);
   }
 

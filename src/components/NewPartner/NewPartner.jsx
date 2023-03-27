@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { Container, Row, Col } from 'react-bootstrap';
 import style from './NewPartner.module.css'
 import apis from '../../apis/index'
+import Swal from 'sweetalert2';
 
 function NewPartner() {
 
@@ -27,14 +28,22 @@ function NewPartner() {
                     'Authorization': 'Bearer ' + token
                 }
             });
-            console.log(res.data);
+            confirmation(res.data);
         } catch (error) {
             console.error(error, 'hola');
         }
     }
 
-
-
+    function confirmation() {
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: 'La información se ha enviado correctamente.',
+            confirmButtonText: 'Aceptar',
+            background: '#193660',
+            color: '#ffffff'
+        });
+}
 // const handleFileInputChange = (event) => {
 //     const newFileList = [...fileList];
 //     for (let i = 0; i < event.target.files.length; i++) {
@@ -167,7 +176,7 @@ return (
                 <input
                     className={style.FormInput}
                     type="text"
-                    {...register("addres", {
+                    {...register("address", {
                         pattern: /^[A-Za-z]+$/i
                     })} />
 
