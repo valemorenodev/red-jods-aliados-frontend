@@ -71,7 +71,7 @@ function Ally() {
                                     </div>
 
                                     <p className={style.text}>
-                                        {data.data.description ? data.data.description : 'La descripción no esta disponible.'}
+                                        {data.data.description ? data.data.description : 'La información no esta disponible.'}
                                     </p>
                                 </div>
                                 <div className={style.section}>
