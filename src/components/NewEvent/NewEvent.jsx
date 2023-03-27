@@ -62,7 +62,6 @@ const NewEvent = () => {
                         type="text"
                         {...register('type_activity', {
                             required: true,
-                            pattern: /^[A-Za-z]+$/i,
                         })} />
                     {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
@@ -73,7 +72,6 @@ const NewEvent = () => {
                         type="text"
                         {...register('name', {
                             required: true,
-                            pattern: /^[A-Za-z]+$/i,
                         })} />
                     {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
@@ -84,7 +82,6 @@ const NewEvent = () => {
                         type="text"
                         {...register('organizer', {
                             required: true,
-                            pattern: /^[A-Za-z]+$/i,
                         })} />
                     {errors.title?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 

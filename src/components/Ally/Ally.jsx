@@ -23,7 +23,7 @@ function Ally() {
                     }
                 });
                 setData(response.data);
-                console.log(response.data);
+                // console.log(response.data.data);
             } catch (error) {
                 console.error(error);
             }
@@ -59,7 +59,7 @@ function Ally() {
                                     </div>
 
                                     <p className={style.text}>
-                                        {data.responsable ? data.description : 'El nombre del responsable no esta disponible.'}
+                                        {data.data.responsible ? data.data.responsible : 'El nombre del responsable no esta disponible.'}
                                     </p>
                                 </div>
                                 <div className={style.section}>
@@ -71,7 +71,7 @@ function Ally() {
                                     </div>
 
                                     <p className={style.text}>
-                                        {data.description ? data.description : 'La descripción no esta disponible.'}
+                                        {data.data.description ? data.data.description : 'La información no esta disponible.'}
                                     </p>
                                 </div>
                                 <div className={style.section}>
@@ -82,15 +82,15 @@ function Ally() {
                                         <Bar />
                                     </div>
                                     <p className={style.text}>
-                                    {data.description ? data.description : 'El objetivo no esta disponible.'}
+                                    {data.data.objectives ? data.data.objectives : 'El objetivo no esta disponible.'}
                                     </p>
                                 </div>
                             </section>
 
                             <div className={style.indicators}>
-                                <div> <h4 className={style.subtitle}>Fecha de inicio</h4><p className={style.date}>{data.date_start ? data.date_start : 'Fecha no disponible.'}</p></div>
-                                <div> <h4 className={style.subtitle}>Fecha de Finalización</h4><p className={style.date}>{data.date_end ? data_end : 'Activo'}</p></div>
-                                <div> <h4 className={style.subtitle}>Fecha de Modificación</h4><p className={style.date}>{data.updatedAt ? data.updatedAt : 'Fecha no disponible.'}</p></div>
+                                <div> <h4 className={style.subtitle}>Fecha de inicio</h4><p className={style.date}>{data.data.date_start ? data.data.date_start : 'Fecha no disponible.'}</p></div>
+                                <div> <h4 className={style.subtitle}>Fecha de Finalización</h4><p className={style.date}>{data.data.date_end ? data.data.date_end : 'Activo'}</p></div>
+                                <div> <h4 className={style.subtitle}>Fecha de Modificación</h4><p className={style.date}>{data.data.updatedAt ? data.data.updatedAt : 'Fecha no disponible.'}</p></div>
                             </div>
                         </section>
                     </section>

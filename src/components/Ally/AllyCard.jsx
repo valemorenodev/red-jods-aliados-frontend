@@ -33,9 +33,9 @@ function AllyCard(props) {
     return (
         <div className={style.main}>
             <div id={style.encabezado}>
-                <h1>{data.organization ? data.organization : 'Nombre no disponible'}</h1>
-                <h6>ODS del aliado</h6>
-                <h6>EJE</h6>
+                <h1>{data.data.organization ? data.data.organization : 'Nombre no disponible'}</h1>
+                <h6>{data.data.ODS ? data.data.ODS : 'ODS no disponible'}</h6>
+                <h6>{data.data.eje ? data.data.eje : 'ODS no disponible'}</h6>
                 <button id={style.btn}>Editar</button>
             </div>
 
@@ -50,9 +50,9 @@ function AllyCard(props) {
                         <Card.Title>Contacto</Card.Title>
                         <Card.Text>
                             <div>
-                                <h6 className={style.info}>Número: {data.number ? data.number : 'No disponible.'}</h6>
-                                <h6 className={style.info}>Correo Electronico: {data.email ? data.email : 'No disponible.'}</h6>
-                                <h6 className={style.info}>Dirección: {data.address ? data.address : 'No disponible.'}</h6>
+                                <h6 className={style.info}>Número: {data.data.phone ? data.data.phone : 'No disponible.'}</h6>
+                                <h6 className={style.info}>Correo Electronico: {data.data.email ? data.data.email : 'No disponible.'}</h6>
+                                <h6 className={style.info}>Dirección: {data.data.address ? data.data. address : 'No disponible.'}</h6>
                             </div>
                         </Card.Text>
 
