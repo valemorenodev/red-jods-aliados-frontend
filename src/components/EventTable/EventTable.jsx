@@ -55,7 +55,7 @@ function EventTable() {
           fetchData();
       }, []);
 
-    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useGlobalFilter, usePagination );
+    const tableInstance = useTable({ columns, data, initialState: { pageSize: 3 } }, useGlobalFilter, usePagination );
 
     const {
         getTableProps,

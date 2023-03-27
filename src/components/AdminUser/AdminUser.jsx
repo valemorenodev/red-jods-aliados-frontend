@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTable, useFilters, usePagination } from 'react-table';
+import { useTable, usePagination, useGlobalFilter } from 'react-table';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { AiOutlineSearch } from "react-icons/ai"
 import { IoChevronBackSharp } from "react-icons/io5"
@@ -52,7 +52,9 @@ function AdminUser() {
               icon: 'error',
               title: 'Error',
               text: errorMessage,
-              confirmButtonColor: '#ff6565',
+              background: '#193660',
+              color: '#ffffff',
+              confirmButtonColor: '#5CA84D',
             });
           };
         
@@ -90,15 +92,16 @@ function AdminUser() {
         }
       };
 
-    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useFilters, usePagination);
+    const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useGlobalFilter, usePagination);
 
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         page,
+        state,
+        setGlobalFilter,
         prepareRow,
-        setFilter,
         state: { pageIndex, pageSize },
         nextPage,
         previousPage,
@@ -138,11 +141,6 @@ function AdminUser() {
     };
 
     const removeUser = async (id) => {
-        if (user === "user") {
-            showErrorAlert("Solo los administradores pueden eliminar usuarios");
-            return;
-        }
-    
         await apis.delete(`/userroute/${id}`);
         setDeletedUser((oldList) => {
             return oldList.filter((item) => item._id !== id);
@@ -232,7 +230,7 @@ function AdminUser() {
 
                     <div className={style.search}>
                         {' '}
-                        <input id={style.search} type="text" onChange={(e) => handleFilterChange(e, 'eje')} />
+                        <input id={style.search} type="text" onChange={(e) => setGlobalFilter(e.target.value)} />
                         <AiOutlineSearch />
                     </div>
 
@@ -261,8 +259,8 @@ function AdminUser() {
                                         })}
                                         <td>
                                             <div className={style.plus}>
-                                                <button onClick={removeUser(user._id)}>
-                                                    <FaTrash size={25}/>
+                                                <button onClick={removeUser}>
+                                                    <FaTrash size={25} color='#193660'/>
                                                 </button>
                                             </div>
 

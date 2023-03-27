@@ -233,7 +233,7 @@ return (
                     placeholder='Diligencia tu respuesta'
                     className={style.FormInput}
                     type="textarea"
-                    {...register('objetives', {
+                    {...register('objectives', {
                         required: true,
                     })} />
                 {errors.objetive?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
