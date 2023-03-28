@@ -69,7 +69,6 @@ function Header() {
         </div>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" id={style.menu} />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" id={style.menu} />
 
         <Navbar.Collapse className={style.section2} id="basic-navbar-nav">
           <Nav className='navbar-items-s'>
