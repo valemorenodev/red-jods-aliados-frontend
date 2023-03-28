@@ -82,7 +82,7 @@ function Ally() {
                                         <Bar />
                                     </div>
                                     <p className={style.text}>
-                                    {data.data.objectives ? data.data.objectives : 'El objetivo no esta disponible.'}
+                                        {data.data.objectives ? data.data.objectives : 'El objetivo no esta disponible.'}
                                     </p>
                                 </div>
                             </section>
@@ -102,13 +102,18 @@ function Ally() {
                         </div>
 
                         <div className={style.resource}>
-                            <div className={style.card}>
-                                <IoDocumentTextOutline size={100} />
-                                <p className={style.doctext}>Titulo de documento</p>
-                                <button className={style.opendoc}>Abrir</button>
-                            </div>
+                            {(data.data.url) ? (
+                                <div className={style.card}>
+                                    <IoDocumentTextOutline size={100} />
+                                    <p className={style.doctext}>{data.data.url}</p>
+                                    <button className={style.opendoc}>Abrir</button>
+                                </div>
+                            ) : (
+                                <h6 className={style.info}>El aliado no posee archivos adjuntos.</h6>
+                            )}
                         </div>
                     </section>
+
 
                     <div className={style.Section3}>
                         <EventTable />
