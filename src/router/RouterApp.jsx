@@ -7,7 +7,6 @@ import Ally from '../Views/Ally'
 import NewEvent from '../Views/NewEvent'
 import Error404 from '../Views/Page404'
 import UserList from '../Views/UserList'
-import EditAlly from '../Views/EditAlly'
 
 
 const RouterApp = () => {
