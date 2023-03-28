@@ -1,4 +1,4 @@
-import React, { useState, useCallback }from 'react'
+import React, { useState }from 'react'
 import Card from 'react-bootstrap/Card';
 import style from './AllyCard.module.css'
 // import { Link } from 'react-router-dom'
@@ -21,12 +21,7 @@ function AllyCard(props) {
     
       const handleModalClose = () => {
         setShowModal(false);
-        reloadPage()
       };
-
-      const reloadPage = useCallback(() => {
-        window.location.reload();
-      }, []);
 
     const { data } = props;
 
@@ -46,7 +41,7 @@ function AllyCard(props) {
                 <h6>{data.data.ODS ? data.data.ODS : 'ODS no disponible'}</h6>
                 <h6>{data.data.eje ? data.data.eje : 'ODS no disponible'}</h6>
                     <button id={style.btn} onClick={handleModalOpen}>Editar</button>
-                    <EditAlly isOpen={showModal} onClose={handleModalClose} reloadPage={reloadPage} />
+                    <EditAlly isOpen={showModal} onClose={handleModalClose} />
             </div>
 
 
