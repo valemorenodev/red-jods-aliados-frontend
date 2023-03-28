@@ -63,15 +63,15 @@ function AlliesList() {
           fetchData();
       }, []);
 
-      const viewAlly = async (id) => {
-        try {
-          const response = await apis.get(`/nameroute/${id}`);
-          setAllyDetails(response.data);
-          navigate(`/nameroute/${id}`);
-        } catch (error) {
-          console.log(error);
-        }
-      };
+    //   const viewAlly = async (id) => {
+    //     try {
+    //       const response = await apis.get(`/nameroute/${id}`);
+    //       setAllyDetails(response.data);
+    //       navigate(`/nameroute/${id}`);
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   };
 
     const tableInstance = useTable({ columns, data, initialState: { pageSize: 6 } }, useGlobalFilter, usePagination);
 

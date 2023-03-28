@@ -109,11 +109,6 @@ function AdminUser() {
         canNextPage,
     } = tableInstance;
 
-    const handleFilterChange = (e, accessor) => {
-        const value = e.target.value;
-        setFilter(accessor, value);
-    };
-
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -142,7 +137,7 @@ function AdminUser() {
 
     const removeUser = async (id) => {
         await apis.delete(`/userroute/${id}`);
-        setDeletedUser((oldList) => {
+        setUser((oldList) => {
             return oldList.filter((item) => item._id !== id);
         });
     };

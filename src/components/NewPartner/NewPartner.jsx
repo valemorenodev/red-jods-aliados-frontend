@@ -176,43 +176,33 @@ return (
                 <input
                     className={style.FormInput}
                     type="text"
-                    {...register("address", {
-                        pattern: /^[A-Za-z]+$/i
-                    })} />
+                    {...register("address")} />
 
                 <label id='title-form'>Twitter <span className={style.FormTitleP}>URL del sitio</span></label>
                 <input
                     className={style.FormInput}
                     type="text"
-                    {...register("twitter", {
-                        pattern: /^[A-Za-z]+$/i
-                    })} />
+                    {...register("twitter")} />
 
                 <label id='title-form'>Facebook <span className={style.FormTitleP}>URL del sitio</span></label>
                 <input
                     className={style.FormInput}
                     type="text"
-                    {...register("fb", {
-                        pattern: /^[A-Za-z]+$/i
-                    })} />
+                    {...register("fb")} />
 
 
                 <label id='title-form'>Instagram <span className={style.FormTitleP}>URL del sitio</span></label>
                 <input
                     className={style.FormInput}
                     type="text"
-                    {...register("ig", {
-                        pattern: /^[A-Za-z]+$/i
-                    })} />
+                    {...register("ig")} />
 
 
                 <label id='title-form'>Linkedin <span className={style.FormTitleP}>URL del sitio</span></label>
                 <input
                     className={style.FormInput}
                     type="text"
-                    {...register("linkedin", {
-                        pattern: /^[A-Za-z]+$/i
-                    })} />
+                    {...register("linkedin")} />
 
 
 
@@ -248,14 +238,12 @@ return (
                     })} />
                 {errors.date?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
-                <label id='title-form'>Fecha de Finalización<span className={style.FormRequired}>*</span></label>
+                <label id='title-form'>Fecha de Finalización</label>
                 <input
                     id='input-form'
                     className={style.FormInput}
                     type="date"
-                    {...register("date_end", {
-                        required: true
-                    })} />
+                    {...register("date_end")} />
                 {errors.date?.type === 'required' && <p id='error-msg'>El campo es requerido</p>}
 
                 <Row className={style.FormTitle}>
