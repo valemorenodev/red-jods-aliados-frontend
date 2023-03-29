@@ -15,11 +15,11 @@ const RouterApp = () => {
     return (
         <Routes>
             <Route path='/' element={<Login />} />
-             <Route
+            <Route
                 path='nameroute'
                 element={
 
-                        <AlliesList />
+                    <AlliesList />
 
                 }
             />
@@ -53,7 +53,8 @@ const RouterApp = () => {
             <Route path='/Ally' element={<Ally />} />
             <Route path='/NewEvent' element={<NewEvent />} />
             <Route path='/Usuarios' element={<UserList />} />
-            <Route path='/Doc' element={<Documentation/>} />
+            {/* Path to view the documentation */}
+            <Route path='/Doc' element={<Documentation />} />
 
         </Routes>
     )
